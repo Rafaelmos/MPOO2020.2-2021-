@@ -14,12 +14,13 @@ public class Main extends Robot {
 //		robot.iniciarRobot();
 //		robot.andarVariosPasso(5);
 //		robot.mudarPosicao(2,5);
+//		robot.mudarDirecao();
 //		robot.andarUmPasso();
 //		robot.retornaPosZero();
 //		robot.statusRobot();
 		
 
-//		robot.mudarDirecao();
+
 
 
 

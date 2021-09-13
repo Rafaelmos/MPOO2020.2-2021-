@@ -66,27 +66,34 @@ public class Robot {
 
 	@SuppressWarnings("resource")
 	public void mudarDirecao() {
+
 		while (true) {
-			Scanner input = new Scanner(System.in);
-			System.out.println("ESCOLHA A NOVA DIRE플O\n[0] = Norte  [1] = Sul\n[2] = Leste  [3] = Oeste");
-			System.out.print("OP플O: ");
-			int opcao = input.nextInt();
-			if (opcao == 0) {
-				direcao = "Norte";
-				break;
-			} else if (opcao == 1) {
-				direcao = "Sul";
-				break;
-			} else if (opcao == 2) {
-				direcao = "Leste";
-				break;
-			} else if (opcao == 3) {
-				direcao = "Oeste";
-				break;
-			} else {
+			try {
+				Scanner input = new Scanner(System.in);
+				System.out.println("ESCOLHA A NOVA DIRE플O\n[0] = Norte  [1] = Sul\n[2] = Leste  [3] = Oeste");
+				System.out.print("OP플O: ");
+				int opcao = input.nextInt();
+				if (opcao == 0) {
+					direcao = "Norte";
+					break;
+				} else if (opcao == 1) {
+					direcao = "Sul";
+					break;
+				} else if (opcao == 2) {
+					direcao = "Leste";
+					break;
+				} else if (opcao == 3) {
+					direcao = "Oeste";
+					break;
+				} else {
+					System.out.println("OP플O INVALIDA, ESCOLHA UMA OP플O CORRETA");
+				}
+			} catch (Exception e) {
 				System.out.println("OP플O INVALIDA, ESCOLHA UMA OP플O CORRETA");
+				mudarDirecao();
 			}
 		}
+
 	}
 
 	public void retornaPosZero() {
@@ -100,10 +107,8 @@ public class Robot {
 		return posicao;
 	}
 
-	public static void setPosicao(ArrayList<Integer> posicao) {
+	private static void setPosicao(ArrayList<Integer> posicao) {
 		Robot.posicao = posicao;
 	}
-	
 
-	
 }

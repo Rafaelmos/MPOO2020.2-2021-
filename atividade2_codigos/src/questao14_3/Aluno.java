@@ -8,10 +8,9 @@ public class Aluno {
 	private double nota3;
 	private double media;
 	private double notaFinal;
+	private double maiornota1;
+	private double maiornota2;
 
-
-
-	
 	public Aluno(String nome, int matricula, double nota1, double nota2, double nota3, double notaFinal) {
 		super();
 		this.nome = nome;
@@ -22,20 +21,29 @@ public class Aluno {
 		this.notaFinal = notaFinal;
 	}
 
-	public void mediaNotas() {
-
+	private void calcularMedias() {
 		if (nota3 <= nota2 && nota3 <= nota1) {
 			media = (nota1 + nota2) / 2;
+			maiornota1 = nota1;
+			maiornota2 = nota2;
 		} else if (nota1 <= nota2 && nota1 <= nota3) {
 			media = (nota2 + nota3) / 2;
+			maiornota1 = nota2;
+			maiornota2 = nota3;
 		} else if (nota2 <= nota1 && nota2 <= nota3) {
 			media = (nota3 + nota1) / 2;
-			System.out.println("Notas maiores " + nota1 + " e " + nota3);
+			maiornota1 = nota1;
+			maiornota2 = nota3;
 		}
+	}
+	
+	public void calcularMedia() {
+		calcularMedias();
 		System.out.println("A média é: " + media);
 	}
 	
-	public void mediaFinal() {
+	
+	private void mediaFinal() {
 		if (media<7) {
 			media=(media+notaFinal)/2;
 		} else {
@@ -44,30 +52,23 @@ public class Aluno {
 	}
 
 	public void maioresNotas() {
-		if (nota3 <= nota2 && nota3 <= nota1) {
-			System.out.println("Notas maiores " + nota1 + " e " + nota2);
-		} else if (nota1 <= nota2 && nota1 <= nota3) {
-			System.out.println("Notas maiores " + nota2 + " e " + nota3);
-		} else if (nota2 <= nota1 && nota2 <= nota3) {
-			System.out.println("Notas maiores " + nota1 + " e " + nota3);
-		}
+		calcularMedias();
+		System.out.println("Notas maiores " + maiornota1 + " e " + maiornota2);
 	}
-
+	
 	public void situacaoAluno() {
 		if (media >= 7) {
 			System.out.println("Aluno " + nome + " aprovado.");
 		} else {
 			System.out.println("Aluno " + nome + " precisará fazer a prova final.");
 		}
-	}
-
-	public void situacaoAlunoFinal() {
 		mediaFinal();
-	if (media >= 5) {
-		System.out.println("Aluno " + nome + " aprovado com a nota: " + media);
+		if (media >= 5) {
+		System.out.println("Aluno " + nome + " aprovado na final com a média: " + media);
 	} else {
 		System.out.println("Aluno " + nome + " foi reprovado com a nota: " + media);
 	}
+
 }
 
 }
