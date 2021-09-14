@@ -1,30 +1,26 @@
 package questao14_2;
 
-import java.util.ArrayList;
-
-public class Main extends Robot {
-
-	public Main(String nome, String direcao, ArrayList<Integer> posicao) {
-		super(nome, direcao, posicao);
-	}
-
+public class Main {
 	public static void main(String[] args) {
-		Robot robot = new Robot("Robertinho", "Norte", getPosicao());
+		Robot robot = new Robot("Robertinho", "Norte");
+		Robot robot2 = new Robot("Zequinha", "Norte");
 
 //		robot.iniciarRobot();
-//		robot.andarVariosPasso(5);
-//		robot.mudarPosicao(2,5);
+//		robot2.iniciarRobot();
+
 //		robot.mudarDirecao();
-//		robot.andarUmPasso();
+//		robot.andar(5);
+//		robot.mudarPosicao(2, 5);
+//		robot.andar();
+
+//		robot2.andar(99);
+//		robot2.iniciarRobot();
+//		robot2.mudarPosicao(2, 8);
+//		robot2.mudarDirecao();
+
 //		robot.retornaPosZero();
+
 //		robot.statusRobot();
-		
-
-
-
-
-
-		
+//		robot2.statusRobot();
 	}
-
 }

@@ -36,26 +36,31 @@ public class Aluno {
 			maiornota2 = nota3;
 		}
 	}
-	
+
 	public void calcularMedia() {
 		calcularMedias();
 		System.out.println("A média é: " + media);
 	}
-	
-	
+
 	private void mediaFinal() {
-		if (media<7) {
-			media=(media+notaFinal)/2;
+		if (media < 7) {
+			media = (media + notaFinal) / 2;
+			if (media >= 5) {
+				System.out.println("Aluno " + nome + " aprovado na final com a média: " + media);
+			} else {
+				System.out.println("Aluno " + nome + " foi reprovado com a nota: " + media);
+			}
 		} else {
 			System.out.println("O Aluno não está na final");
 		}
+
 	}
 
 	public void maioresNotas() {
 		calcularMedias();
 		System.out.println("Notas maiores " + maiornota1 + " e " + maiornota2);
 	}
-	
+
 	public void situacaoAluno() {
 		if (media >= 7) {
 			System.out.println("Aluno " + nome + " aprovado.");
@@ -63,12 +68,10 @@ public class Aluno {
 			System.out.println("Aluno " + nome + " precisará fazer a prova final.");
 		}
 		mediaFinal();
-		if (media >= 5) {
-		System.out.println("Aluno " + nome + " aprovado na final com a média: " + media);
-	} else {
-		System.out.println("Aluno " + nome + " foi reprovado com a nota: " + media);
 	}
 
-}
+	public int getMatricula() {
+		return matricula;
+	}
 
 }

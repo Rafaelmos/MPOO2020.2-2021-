@@ -4,25 +4,23 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Robot {
-
 	private String nome;
 	private String direcao;
-	private static ArrayList<Integer> posicao = new ArrayList<Integer>(2);
+	private int andar;
+	private ArrayList<Integer> posicao;
 
-	public Robot(String nome, String direcao, ArrayList<Integer> posicao) {
-		super();
+	public Robot(String nome, String direcao) {
 		this.nome = nome;
 		this.direcao = direcao;
-		Robot.setPosicao(posicao);
+		this.posicao = new ArrayList<Integer>(2);
 	}
 
 	public void iniciarRobot() {
-		if (getPosicao().size() == 0) {
+		if (getPosicao().size() == 0 || posicao == null) {
 			getPosicao().add(0);
 			getPosicao().add(0);
 		}
-		getPosicao().set(0, 0);
-		getPosicao().set(1, 0);
+		retornaPosZero();
 		System.out.println(nome + " iniciou");
 	}
 
@@ -32,20 +30,17 @@ public class Robot {
 		System.out.println("A direção atual do " + nome + " é: " + direcao);
 	}
 
-	public void andarUmPasso() {
-		if (direcao == "Norte") {
-			getPosicao().set(1, getPosicao().get(1) + 1);
-		} else if (direcao == "Sul") {
-			getPosicao().set(1, getPosicao().get(1) - 1);
-		} else if (direcao == "Leste") {
-			getPosicao().set(0, getPosicao().get(0) + 1);
-		} else if (direcao == "Oeste") {
-			getPosicao().set(0, getPosicao().get(0) - 1);
-		}
-		System.out.println("O " + nome + " andou 1 passo.");
+	public void andar() {
+		andar = 1;
+		andando();
 	}
 
-	public void andarVariosPasso(int andar) {
+	public void andar(int entrada) {
+		andar = entrada;
+		andando();
+	}
+
+	private void andando() {
 		if (direcao == "Norte") {
 			getPosicao().set(1, getPosicao().get(1) + andar);
 		} else if (direcao == "Sul") {
@@ -55,7 +50,11 @@ public class Robot {
 		} else if (direcao == "Oeste") {
 			getPosicao().set(0, getPosicao().get(0) - andar);
 		}
-		System.out.println("O " + nome + " andou " + andar + " passos.");
+		if (andar != 1) {
+			System.out.println("O " + nome + " andou " + andar + " passos.");
+		} else {
+			System.out.println("O " + nome + " andou " + andar + " passo.");
+		}
 	}
 
 	public void mudarPosicao(int x, int y) {
@@ -64,14 +63,13 @@ public class Robot {
 		System.out.println("A nova posição é: (" + getPosicao().get(0) + "," + getPosicao().get(1) + ")");
 	}
 
-	@SuppressWarnings("resource")
 	public void mudarDirecao() {
-
 		while (true) {
 			try {
+				@SuppressWarnings("resource")
 				Scanner input = new Scanner(System.in);
-				System.out.println("ESCOLHA A NOVA DIREÇÃO\n[0] = Norte  [1] = Sul\n[2] = Leste  [3] = Oeste");
-				System.out.print("OPÇÃO: ");
+				System.out.print(
+						"ESCOLHA A NOVA DIREÇÃO\n" + "[0] = Norte  [1] = Sul\n[2] = Leste  [3] = Oeste\n" + "OPÇÃO: ");
 				int opcao = input.nextInt();
 				if (opcao == 0) {
 					direcao = "Norte";
@@ -88,27 +86,21 @@ public class Robot {
 				} else {
 					System.out.println("OPÇÃO INVALIDA, ESCOLHA UMA OPÇÃO CORRETA");
 				}
-			} catch (Exception e) {
+			} catch (Exception InputMismatchException) {
 				System.out.println("OPÇÃO INVALIDA, ESCOLHA UMA OPÇÃO CORRETA");
-				mudarDirecao();
+
 			}
 		}
-
 	}
 
 	public void retornaPosZero() {
-		System.out.println(nome + " resetou");
 		direcao = "Norte";
 		getPosicao().set(0, 0);
 		getPosicao().set(1, 0);
 	}
 
-	public static ArrayList<Integer> getPosicao() {
+	public ArrayList<Integer> getPosicao() {
 		return posicao;
-	}
-
-	private static void setPosicao(ArrayList<Integer> posicao) {
-		Robot.posicao = posicao;
 	}
 
 }
