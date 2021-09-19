@@ -1,0 +1,21 @@
+Na Classe Conta primeiro temos que consertar o construtor pois não existe um construtor do tipo int, 
+onde temos que referenciar dentro do construtor o número da conta da forma correta utilizando "this" ficando:
+	this.num = num;
+	
+E também devemos consertar os parâmetros onde "int n" se tornará "int num", e devemos referenciar
+dentro do construtor o saldo ficando:
+	this.saldo = saldo;
+
+E por fim colocar o método super() dentro do construtor, para definirmos ele como superclasse.
+
+
+Na Classe Poupança temos que consertar o construtor novamente, pois não há o atributo saldo, 
+nos parâmetros do construtor nem nos parâmetros do método super().
+
+Também precisaremos criar métodos getters e setters para o saldo na classe Conta, pois como
+o atributo saldo é privado, não é possível acessá-lo em uma subclasse sem isso.
+
+E por fim devemos criar um atributo estático do tipo double para a taxa, 
+pois a de rendimento será a mesma para todas as contas e geralmente essa taxa muda todo mês.
+
+Criei um método ToString para verificar o funcionamento do programa.
