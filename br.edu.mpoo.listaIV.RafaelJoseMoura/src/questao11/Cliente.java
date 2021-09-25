@@ -6,10 +6,11 @@ public class Cliente {
 	private boolean pedirDesconto; 
 	
 	
-	public Cliente(String nome, String cpf) {
+	public Cliente(String nome, String cpf, boolean pedirDesconto) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
+		this.pedirDesconto = pedirDesconto;
 	}
 	
 	

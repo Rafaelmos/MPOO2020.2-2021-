@@ -6,9 +6,8 @@ public class Vendedor extends Funcionario {
 		super(nome, cpf, matricula);
 	}
 	
-	private double solicitarAutorizacaoDesconto(GerenteVendas gerenteVendas, Produto produto) {
+	public double solicitarAutorizacaoDesconto(GerenteVendas gerenteVendas, Produto produto) {
 		return gerenteVendas.darDesconto(produto);
-		
 	}
 	
 

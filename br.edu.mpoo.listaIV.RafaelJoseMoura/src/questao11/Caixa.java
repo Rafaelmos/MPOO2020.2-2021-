@@ -1,7 +1,6 @@
 package questao11;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Caixa extends Funcionario{
 	ArrayList<String> listaCompras = new ArrayList<String>();
@@ -11,22 +10,37 @@ public class Caixa extends Funcionario{
 	}
 
 	public void registrarCompra(Produto produto, Vendedor vendedor, GerenteVendas gerenteVendas, boolean isDesconto, boolean pedirDesconto) {
-		Cliente cliente = new Cliente(getNome(), getCpf());
-		if (cliente.pedirDesconto(pedirDesconto)) {
+		if (pedirDesconto) {
 			if (isDesconto) {
-				Compra compra = new Compra(produto, 0, isDesconto, gerenteVendas.darDesconto(produto));
-				listaCompras.add(compra.toString());
 				System.out.println(	Mensagem.exibirMensagem(isDesconto));
+				Compra compra = new Compra(Compra.getContadorId(), produto, 0, isDesconto, gerenteVendas.darDesconto(produto));
+				int novoid = compra.getId()+ 1;
+				compra.setDesconto(vendedor.solicitarAutorizacaoDesconto(gerenteVendas, produto));
+				compra.setId(novoid);
+				listaCompras.add(compra.toString());
+				compra.setContadorId(novoid);
+				System.out.println(compra.toString());
 			} else {
 				System.out.println(	Mensagem.exibirMensagem(isDesconto));
-				Compra compra = new Compra(produto, 0, isDesconto, 0);
-				listaCompras.add(compra.toString());
-			}
-				
+				compraSemDesconto(produto, vendedor, gerenteVendas, isDesconto, pedirDesconto);
+			}	
 		} else {
-			Compra compra = new Compra(produto, 0, isDesconto, 0);
-			listaCompras.add(compra.toString());	
+			compraSemDesconto(produto, vendedor, gerenteVendas, isDesconto, pedirDesconto);
 		}
-		
-	}		
+	}
+	
+	private void compraSemDesconto(Produto produto, Vendedor vendedor, GerenteVendas gerenteVendas, boolean isDesconto, boolean pedirDesconto) {
+		Compra compra = new Compra(Compra.getContadorId(), produto, 0, isDesconto, 0);
+		int novoid = compra.getId()+ 1;
+		compra.setId(novoid);
+		compra.setContadorId(novoid);
+		listaCompras.add(compra.toString());
+		System.out.println(compra.toString());
+	}
+	
+	public void imprimirResultandos() {
+		for (String string : listaCompras) {
+			System.out.println(string);
+		}
+}
 }

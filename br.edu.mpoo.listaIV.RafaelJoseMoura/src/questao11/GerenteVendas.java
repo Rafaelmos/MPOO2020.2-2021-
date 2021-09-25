@@ -11,11 +11,13 @@ public class GerenteVendas extends Gerente {
 
 	@Override
 	public double darDesconto(Produto produto) {
-		//new Compra(produto, produto.getPreco(), true, 0);
 		double desconto = 5;
 		double valordesconto = produto.getPreco()*desconto/100;
-		valordesconto = (valordesconto - produto.getPreco() * produto.getQuantidade());
 		return valordesconto;
+	}
+	
+	public boolean aprovarDesconto(boolean resposta) {
+		return resposta;
 	}
 
 	public String getSenha() {
