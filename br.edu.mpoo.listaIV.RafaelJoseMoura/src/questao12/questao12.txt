@@ -1,0 +1,21 @@
+12.1
+
+Pois ocorreu um erro de casting, onde Pregentino Santos(o gerente2Venda) é do tipo
+Funcionario criado como criado como um Gerente, por isso ele está herdando apenas os
+atributos e métodos de Funcionario.
+
+REFERÊNCIA: Elaboração própria.
+
+12.2
+
+O Furão pode usar um downcasting para solucionar o
+System.out.println(gerente2Venda.getSenha); para
+System.out.println((Gerente2Venda)gerente2Venda.getSenha); 
+
+onde esse parênteses antes do objeto gerente2Vendas, estará fazendo um downcasting
+para o mesmo usar métodos dos GerenteVendas.
+
+
+
+
+REFERÊNCIA: Elaboração própria.

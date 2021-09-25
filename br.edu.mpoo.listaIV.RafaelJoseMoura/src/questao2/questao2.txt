@@ -1,0 +1,6 @@
+Não é possível, pois atributos são o mesmo que variáveis e não é possível ter  
+variáveis ter nomes iguais dentro de uma mesma classe e no mesmo escopo, pois isso
+poderia dar um conflito de atributos.
+
+REFERÊNCIA: Elaboração própria.
+

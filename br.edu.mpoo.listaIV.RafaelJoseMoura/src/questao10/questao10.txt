@@ -1,0 +1,7 @@
+10.1) A saída será a string “DEmery”
+10.2) A saída será a string “pai”
+10.3) Nessa herança a saída foi as informações herdadas do pai, pois o pai foi 
+o primeiro parametro da Classe Filho, na pasta filho.py. Os dados herdados da mães 
+foram recebidos, mas não serão retornado sem a chamada correta.
+
+REFERÊNCIA: Elaboração própria

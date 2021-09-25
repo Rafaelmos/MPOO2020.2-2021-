@@ -1,0 +1,12 @@
+4.1
+Para uma subclasse herdar obrigatoriamente os métodos da superclasse é preciso 
+a superclasse ter métodos abstratos, onde a superclasse também será abstrata.
+
+REFERÊNCIA: Elaboração própria.
+
+4.2
+
+Seria possível fazer um downcast, onde a subclasse, consegue as os atributos e métodos da superclasse porém perdendo as suas próprias.
+REFERÊNCIA: Elaboração própria.
+
+

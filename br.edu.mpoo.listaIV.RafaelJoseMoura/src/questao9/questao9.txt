@@ -1,0 +1,5 @@
+Por causa do atributo cupomPromocional ser do tipo final ele é considerado um atributo 
+apenas de leitura  e não pode ser alterado por meio de métodos como o set e é 
+instanciado diretamente no código.
+
+REFERÊNCIA: Elaboração própria.

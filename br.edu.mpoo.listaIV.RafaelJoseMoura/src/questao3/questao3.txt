@@ -1,0 +1,7 @@
+É porque o super() sem parâmetro é para chamar o construtor da superclasse, ou seja,
+quando um super() não tem parâmetros, ou ele é uma superclasse ou ele não está herdando
+os parâmetros da superclasse do qual ele é filho.
+
+
+REFERÊNCIA: Elaboração própria.
+

@@ -1,0 +1,13 @@
+(V) O objeto de uma subclasse pode ser tratado como um objeto de sua superclasse, mas o contrário não é verdadeiro. 
+
+(V) Quando um método de uma superclasse é inadequado para a subclasse, o programador deve sobrescrever esse método na subclasse.
+
+(F) Uma superclasse representa um número maior de membros que sua subclasse.
+
+Pois, uma subclasse deverá herdar todos os membros da superclasse, ou seja, a subclasse tem a mesma 
+quantidade ou mais de membros do que a superclasse, porém um subclasse não precisa herdar todos os métodos 
+de uma superclasse ao não ser se a superclasse seja uma classe abstrata. 
+
+(V) O objeto de uma subclasse também é um objeto da superclasse dessa subclasse
+
+REFERÊNCIA: Elaboração própria.

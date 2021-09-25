@@ -1,0 +1,10 @@
+Sobreposição faz parte do poliformismo, onde uma SuperClasse que pode ser abstrata tem seus métodos 
+herdados pela SubClasse e os dois podem ter retornos diferentes, ou seja, dentro de 
+seu Body, pode ter linhas de código diferentes.
+
+Já sobrecarga também é outro conceito do poliformismo, porém diferente da sobreposição,
+ocorre tudo na mesma classe, onde dois ou mais métodos com o mesmo nome
+que recebem parâmetros diferentes.
+
+REFERÊNCIA: Elaboração própria.
+

@@ -1,0 +1,4 @@
+toString() é um método que retorna uma representação em string de um objeto. 
+Object é uma superclasse que contém vários métodos e o toString() é um deles.
+
+REFERÊNCIA: Elaboração própria.

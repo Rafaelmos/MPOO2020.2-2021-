@@ -1,0 +1,9 @@
+@author	- É usada para definir o autor da classe ou dos métodos.
+@deprecated - É usada para dizer quais métodos e classes estão em desuso ou obsoletos.
+@link - É usado para colocar um url.
+@param - É usado para mostrar parametros que são usados nesse método.
+@return - Mostra os tipos de retorno do métodos.
+@throws - É usado par mostrar quais tipos de exceções podem ser lançadas em um método
+
+
+Referencia: https://www.devmedia.com.br/javadoc-implementando-documentacao-atraves-do-netbeans/2495
