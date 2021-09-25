@@ -3,7 +3,7 @@ package questao11;
 import java.util.ArrayList;
 
 public class Caixa extends Funcionario{
-	ArrayList<String> listaCompras = new ArrayList<String>();
+	private ArrayList<String> listaCompras = new ArrayList<String>();
 	
 	public Caixa(String nome, String cpf, String matricula) {
 		super(nome, cpf, matricula);
