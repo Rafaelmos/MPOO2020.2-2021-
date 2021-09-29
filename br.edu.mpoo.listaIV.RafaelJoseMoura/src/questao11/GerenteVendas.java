@@ -11,7 +11,7 @@ public class GerenteVendas extends Gerente {
 
 	@Override
 	public double darDesconto(Produto produto) {
-		double desconto = 5;
+		double desconto = 10;
 		double valordesconto = produto.getPreco()*desconto/100;
 		return valordesconto;
 	}

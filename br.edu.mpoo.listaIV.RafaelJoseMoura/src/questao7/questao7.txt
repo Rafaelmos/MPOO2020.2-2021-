@@ -1,4 +1,6 @@
-(V) O objeto de uma subclasse pode ser tratado como um objeto de sua superclasse, mas o contrário não é verdadeiro. 
+(F) O objeto de uma subclasse pode ser tratado como um objeto de sua superclasse, mas o contrário não é verdadeiro.
+
+É justamente o contrário.
 
 (V) Quando um método de uma superclasse é inadequado para a subclasse, o programador deve sobrescrever esse método na subclasse.
 

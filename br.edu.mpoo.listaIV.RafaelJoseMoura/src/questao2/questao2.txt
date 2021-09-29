@@ -1,6 +1,7 @@
-Não é possível, pois atributos são o mesmo que variáveis e não é possível ter  
-variáveis ter nomes iguais dentro de uma mesma classe e no mesmo escopo, pois isso
-poderia dar um conflito de atributos.
+Não é possível, pois não é possível teratributos ter nomes iguais dentro de uma mesma 
+classe e no mesmo escopo, pois isso poderia dar um conflito de atributos e nem na 
+herança já que como herdamos os atributos   da superclasse para subclasse ocorrerá um 
+erro de sintaxe se tentarmos definir uma  variavel de um tipo qualquer para o outro tipo.
 
 REFERÊNCIA: Elaboração própria.
 
