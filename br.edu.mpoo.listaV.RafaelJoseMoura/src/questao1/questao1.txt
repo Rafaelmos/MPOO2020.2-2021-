@@ -1,0 +1,18 @@
+Temos vários tipos de estruturas de lista, por exemplo LinkedList(), Vector(), List(), Array().
+
+LinkedList() - Ela é uma implementação das interfaces List e Deque, é ela é usada geralmente de frente para trás 
+e de trás para frente, ou seja, ela pode demorar um tempo para achar o item necessário que você busca na lista, 
+Por isso afeta muito o desempenho do sistema por consumir muita memória. 
+Então é melhor usá-la em listas pequenas.
+
+Vector() - É sincronizado por padrão, normalmente é usado para desenvolver aplicações Thread-safe.
+
+List() - É uma interface que implementa o ArrayList e o LinkedList.
+
+Array() - Basicamente são usados na criação vetores são estáticos, são utilizados, quando você não quer um array dinâmico, 
+Arrays são sincronizados.
+
+
+O custo de memória irá depender de qual será o objetivo da lista, 
+porém o mais recomendavel é utilizar o ArrayList, pois possui todas as 
+capacidades dos anteriores.
