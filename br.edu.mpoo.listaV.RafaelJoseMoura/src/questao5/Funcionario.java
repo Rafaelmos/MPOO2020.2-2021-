@@ -4,7 +4,7 @@ public abstract class Funcionario {
 	private String nome;
 	private String cpf;
 	private String matricula;
-	
+
 	public Funcionario(String nome, String cpf, String matricula) {
 		super();
 		this.nome = nome;

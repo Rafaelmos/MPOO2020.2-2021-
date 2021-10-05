@@ -13,3 +13,6 @@
 
 	Será o conceito do Lambda, que basicamente é uma forma de otimização
 	 de código, onde podemos tirar os indicadores que separam a lista.
+	 
+	
+REFERÊNCIA: Elaboração Própria

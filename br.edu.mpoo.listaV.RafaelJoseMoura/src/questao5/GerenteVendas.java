@@ -10,10 +10,10 @@ public class GerenteVendas extends Gerente {
 
 	@Override
 	public double darDesconto(Produto produto) {
-///		double desconto = 0.10
-		
-		return 0;
-	}	
+		double desconto = 0.10 * produto.getPreco() * produto.getQuantidade();
+		Mensagem.exibirMensagem(desconto);
+		return desconto;
+	}
 	
 	public String getSenha() {
 		return senha;
@@ -22,8 +22,6 @@ public class GerenteVendas extends Gerente {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
-
 	
 
 }

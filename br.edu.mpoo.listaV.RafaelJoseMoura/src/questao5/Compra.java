@@ -6,10 +6,59 @@ import java.util.Date;
 public class Compra {
 	private int id;
 	private Date date;
-	private ArrayList<Produto> produtos;
-	private	double desconto;
+	private ArrayList<Produto> produtos = new ArrayList<Produto>();
+	private double desconto;
 	private double valorTotal;
-	
+
+	public Compra(int id, Date date, double desconto, double valorTotal) {
+		super();
+		this.id = id;
+		this.date = date;
+		this.desconto = desconto;
+		this.valorTotal = valorTotal;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public ArrayList<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void addProdutos(Produto produto) {
+		ArrayList<Produto> produtos = new ArrayList<Produto>();
+		produtos.add(produto);
+	}
+
+	public double getDesconto() {
+		return desconto;
+	}
+
+	public void setDesconto(double desconto) {
+		this.desconto = desconto;
+	}
+
+	public double getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
 	@Override
 	public String toString() {
 		return "Compra [id=" + id + ", date=" + date + ", produtos=" + produtos + ", desconto=" + desconto

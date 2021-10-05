@@ -16,3 +16,9 @@ Arrays são sincronizados.
 O custo de memória irá depender de qual será o objetivo da lista, 
 porém o mais recomendavel é utilizar o ArrayList, pois possui todas as 
 capacidades dos anteriores.
+
+REFERÊNCIA: 
+https://www.tutorialcup.com/pt/Java/arraylist-vs-linkedlist.htm
+https://pt.fondoperlaterra.org/list-vs-arraylist-in-java-183
+https://www.devmedia.com.br/diferenca-entre-arraylist-vector-e-linkedlist-em-java/29162
+https://stackoverflow.com/questions/322715/when-to-use-linkedlist-over-arraylist-in-java
