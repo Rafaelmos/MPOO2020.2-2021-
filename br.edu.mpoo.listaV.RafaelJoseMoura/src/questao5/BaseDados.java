@@ -99,4 +99,16 @@ public class BaseDados {
 	public static void atualizarVendas(int index) {
 		vendas.remove(index);
 	}
+
+	public static ArrayList<Compra> getCompras() {
+		for (Compra compra : compras) {
+			
+		}
+		return compras;
+	}
+
+	public static ArrayList<Venda> getVendas() {
+		return vendas;
+	}
+
 }

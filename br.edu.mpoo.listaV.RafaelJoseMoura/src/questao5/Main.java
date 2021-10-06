@@ -19,6 +19,13 @@ public class Main {
 
 		BaseDados.removerCompra(2);
 
+//		caixa.imprimirResultado();
+
+		System.out.println(BaseDados.getCompras());
+		System.out.println(BaseDados.getVendas());
+		
+
+		
 	}
 
 }
