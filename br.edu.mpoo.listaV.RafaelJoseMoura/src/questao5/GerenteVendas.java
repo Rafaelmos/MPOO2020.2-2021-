@@ -14,7 +14,7 @@ public class GerenteVendas extends Gerente {
 		Mensagem.exibirMensagem(desconto);
 		return desconto;
 	}
-	
+
 	public String getSenha() {
 		return senha;
 	}
@@ -22,6 +22,5 @@ public class GerenteVendas extends Gerente {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
 
 }

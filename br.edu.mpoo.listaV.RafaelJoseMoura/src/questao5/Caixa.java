@@ -5,9 +5,8 @@ import java.util.Date;
 
 public class Caixa extends Funcionario {
 
-private ArrayList<String> listaCompras = new ArrayList<String>();
-	
-	
+	private ArrayList<String> listaCompras = new ArrayList<String>();
+
 	public Caixa(String nome, String cpf, String matricula) {
 		super(nome, cpf, matricula);
 	}
@@ -16,7 +15,7 @@ private ArrayList<String> listaCompras = new ArrayList<String>();
 		double desconto = 0;
 		if (isDesconto) {
 			desconto = vendedor.solicitarAutorizacaoDesconto(gerenteVendas, produto);
-		} else {};
+		} 
 		double valorTotal = (produto.getPreco() * produto.getQuantidade()) - desconto;
 		Date data = new Date(System.currentTimeMillis());
 		Compra compra = new Compra(0, data, desconto, valorTotal);
@@ -33,6 +32,6 @@ private ArrayList<String> listaCompras = new ArrayList<String>();
 	public void imprimirResultado() {
 		for (String string : listaCompras) {
 			System.out.println(string);
-		}	
+		}
 	}
 }

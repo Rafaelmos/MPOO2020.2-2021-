@@ -2,19 +2,17 @@ package questao5;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.Date;
 
 public class BaseDados {
 	private static ArrayList<Compra> compras = new ArrayList<Compra>();
 	private static ArrayList<Venda> vendas = new ArrayList<Venda>();
 
 	public static Compra buscarCompra(Compra compra) {
-		for (Compra c : compras) {
-			if (compras.contains(compra)) {
-				return c;
-			}
+		if (compras.contains(compra)) {
+			return null;
 		}
-		return null;
+		return compra;
 	}
 
 	public static Compra buscarCompra(int id) {
@@ -28,9 +26,9 @@ public class BaseDados {
 
 	public static boolean adicionarCompra(Compra compra) {
 		if (buscarCompra(compra) != null) {
-			atualizarVendas(compra);
 			compras.add(compra);
-			atualizarVendas(compra);
+			boolean isAdd = true;
+			atualizarVendas(compra, isAdd);
 		}
 		return false;
 	}
@@ -38,57 +36,67 @@ public class BaseDados {
 	public static boolean removerCompra(Compra compra) {
 		if (buscarCompra(compra) != null) {
 			compras.remove(compras.indexOf(buscarCompra(compra)));
-			atualizarVendas(compra);
+			boolean isAdd = false;
+			atualizarVendas(compra, isAdd);
 			return true;
 		}
+		System.out.println("Compra não encotrada");
+		return false;
+	}
+
+	public static boolean removerCompra(int id) {
+		if (buscarCompra(id) != null) {
+			for (Compra c : compras) {
+				if (c.getId() == id) {
+					compras.remove(c);
+					int index = c.getId() - 1;
+					atualizarVendas(index);
+					System.out.println("Compra removida");
+					return true;
+				}
+			}
+		}
+		System.out.println("Compra não encotrada");
 		return false;
 	}
 
 	public static double totalVendas(int mes, int ano) {
-		int i = 0;
-		for (Venda venda : vendas) {
-			if (venda.getAno() == ano && venda.getMes() == mes) {
-				i++;
+		double vendasDoMes = 0;
+		int numeroVendas = 1;
+		for (int i = 0; i < vendas.size(); i++) {
+			if (vendas.get(i).getMes() == mes && vendas.get(i).getAno() == ano) {
+				vendasDoMes += vendas.get(i).getValorTotal();
+				numeroVendas += i;
 			}
-			return i;
 		}
-		return i;
+		if (numeroVendas == 1) {
+			numeroVendas = 0;
+		}
+		System.out.println("O número de vendas foi " + numeroVendas);
+		return vendasDoMes;
 	}
 
-	public static boolean atualizarVendas(Compra compra) {
+	public static boolean atualizarVendas(Compra compra, boolean isAdd) {
 		Venda venda = new Venda(0, 0, 0);
-		GregorianCalendar dataCal = new GregorianCalendar();
-		dataCal.setTime(compra.getDate());
-		int mes = dataCal(Calendar.MONTH);
-		int ano = dataCal(Calendar.YEAR);
+		Date d = compra.getDate();
+		Calendar c = Calendar.getInstance();
+		c.setTime(d);
+		int ano = c.get(Calendar.YEAR);
+		int mes = c.get(Calendar.MONTH);
 		venda.setMes(mes);
 		venda.setAno(ano);
 		venda.setValorTotal(compra.getValorTotal());
-		if (buscarCompra(compra) != null) {
+		if (isAdd) {
 			return vendas.add(venda);
-		} else {
-			for (Venda v : vendas) {
-				if (v.equals(venda)) {
-					return vendas.remove(v);
-				}
-			}
+		} else if (!isAdd) {
+			System.out.println("Venda não encontrada");
+			return false;
 		}
+		System.out.println("Nem adicinou nem removeu, pois obj não existe");
 		return false;
 	}
 
-	private static int dataCal(int month) {
-		return 0;
+	public static void atualizarVendas(int index) {
+		vendas.remove(index);
 	}
-
-	public static ArrayList<Compra> getCompras() {
-		return compras;
-	}
-
-	public static ArrayList<Venda> getVendas() {
-		return vendas;
-	}
-	
-		
-	}
-	
-
+}

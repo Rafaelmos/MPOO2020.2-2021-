@@ -18,6 +18,13 @@ public class Compra {
 		this.valorTotal = valorTotal;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "Compra [id=" + id + ", date=" + date + ", produtos=" + produtos + ", desconto=" + desconto
+				+ ", valorTotal=" + valorTotal + "]";
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -39,7 +46,6 @@ public class Compra {
 	}
 
 	public void addProdutos(Produto produto) {
-		ArrayList<Produto> produtos = new ArrayList<Produto>();
 		produtos.add(produto);
 	}
 
@@ -57,11 +63,5 @@ public class Compra {
 
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
-	}
-
-	@Override
-	public String toString() {
-		return "Compra [id=" + id + ", date=" + date + ", produtos=" + produtos + ", desconto=" + desconto
-				+ ", valorTotal=" + valorTotal + "]";
 	}
 }
