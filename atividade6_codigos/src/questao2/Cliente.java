@@ -1,4 +1,4 @@
-package questao1;
+package questao2;
 
 import java.util.ArrayList;
 
@@ -19,17 +19,11 @@ public class Cliente {
 		this.sexo = sexo;
 	}
 
-	public void addEd(Endereco endereco) {
-		if (!enderecos.contains(endereco)) {
-			this.enderecos.add(endereco);
-		} else System.out.println("Endereço já existe nesse objeto");
-		
-	}
 
 	@Override
 	public String toString() {
 		return "Cliente \n[cpf=" + cpf + ", telefone=" + telefone + ", nome=" + nome + ", email=" + email
-				+ ",\n enderecos=" + enderecos.toString()  + ",\n sexo=" + sexo + "]";
+				+ ",\n enderecos=" + enderecos.toString() + ",\n sexo=" + sexo + "]";
 	}
 
 	public String getCpf() {

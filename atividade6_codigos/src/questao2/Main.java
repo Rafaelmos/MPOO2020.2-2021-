@@ -1,4 +1,4 @@
-package questao1;
+package questao2;
 
 public class Main {
 
@@ -8,16 +8,19 @@ public class Main {
 				"Serra Talhada", "PE", "56909-535");
 
 		Cliente cliente1 = new Cliente("156.141.145-45", "(87) 9 9999-8888", "Roberto", "roberto@email.com", "M");
-		cliente1.addEd(endereco1);
+		BaseEnderecos.adicionarEndereco(cliente1, endereco1);
 
 		Cliente cliente2 = new Cliente("156.141.145-44", "(87) 9 98742-8598", "Ana", "ana@email.com", "F");
-		cliente2.addEd(endereco1);
-		cliente2.addEd(endereco2);
-//		cliente2.addEd(endereco2);
+		BaseEnderecos.adicionarEndereco(cliente2, endereco1);
+		BaseEnderecos.adicionarEndereco(cliente2, endereco2);
+//		BaseEnderecos.adicionarEndereco(cliente2, endereco2);
+		BaseEnderecos.removerEndereco(cliente2, endereco2);
+
+		System.out.println(cliente2.getEnderecos());
 
 		Cliente cliente3 = new Cliente("156.141.145-45", "(87) 9 9999-9999", "Roberto Duplicado", "roberto@email.com",
 				"M");
-		cliente3.addEd(endereco2);
+		BaseEnderecos.adicionarEndereco(cliente3, endereco2);
 
 		BaseDados.adicionarCliente(cliente1);
 //		BaseDados.adicionarCliente(cliente1);

@@ -1,4 +1,4 @@
-package questao1;
+package questao2;
 
 import java.util.ArrayList;
 
@@ -10,6 +10,7 @@ public class BaseDados {
 			if (!clientes.contains(cliente)) {
 				return cliente;
 			}
+
 		} else {
 			System.out.println("CPF DUPLICADO");
 		}
@@ -39,7 +40,6 @@ public class BaseDados {
 	public static Cliente adicionarCliente(Cliente cliente) {
 		if (buscarCliente(cliente) != null) {
 			clientes.add(cliente);
-
 		}
 		return cliente;
 	}
@@ -69,4 +69,5 @@ public class BaseDados {
 	public static ArrayList<Cliente> getClientes() {
 		return clientes;
 	}
+
 }
