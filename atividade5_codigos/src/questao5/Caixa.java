@@ -19,7 +19,6 @@ public class Caixa extends Funcionario {
 		Compra compra = new Compra(0, data, desconto, valorTotal);
 		compra.setId(BaseDados.getCompras().size() + 1);
 		compra.setDate(data);
-		compra.addProdutos(produto);
 		compra.setDesconto(desconto);
 		compra.setValorTotal(valorTotal);
 		compra.getProdutos().add(produto);

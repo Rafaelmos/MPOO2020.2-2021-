@@ -51,6 +51,7 @@ public class BaseDados {
 					compras.remove(c);
 					int index = c.getId() - 1;
 					atualizarVendas(index);
+					ordenarCompras();
 					System.out.println("Compra removida");
 					return true;
 				}
@@ -95,7 +96,14 @@ public class BaseDados {
 		System.out.println("Nem adicinou nem removeu, pois obj não existe");
 		return false;
 	}
-
+	
+	private static void ordenarCompras() {
+		for (int i = 0; i < compras.size(); i++) {
+			compras.get(i).setId(i+1);
+		}
+		
+	}
+	
 	public static void atualizarVendas(int index) {
 		vendas.remove(index);
 	}

@@ -45,10 +45,6 @@ public class Compra {
 		return produtos;
 	}
 
-	public void addProdutos(Produto produto) {
-		produtos.add(produto);
-	}
-
 	public double getDesconto() {
 		return desconto;
 	}
