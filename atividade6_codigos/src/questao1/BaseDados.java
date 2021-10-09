@@ -46,6 +46,9 @@ public class BaseDados {
 
 	public static boolean removerCliente(Cliente cliente) {
 		if (buscarCliente(cliente.getCpf()) != null) {
+			for (Endereco endereco : cliente.getEnderecos()) {
+				cliente.getEnderecos().remove(endereco);
+			}
 			return clientes.remove(cliente);
 		}
 		return false;
