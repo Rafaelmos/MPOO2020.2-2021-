@@ -8,38 +8,27 @@ public class Main {
 				"Serra Talhada", "PE", "56909-535");
 
 		Cliente cliente1 = new Cliente("156.141.145-45", "(87) 9 9999-8888", "Roberto", "roberto@email.com", "M");
-		BaseEnderecos.adicionarEndereco(cliente1, endereco1);
 
 		Cliente cliente2 = new Cliente("156.141.145-44", "(87) 9 98742-8598", "Ana", "ana@email.com", "F");
-		BaseEnderecos.adicionarEndereco(cliente2, endereco1);
-		BaseEnderecos.adicionarEndereco(cliente2, endereco2);
+
 		BaseDados.adicionarCliente(cliente1);
 		BaseDados.adicionarCliente(cliente2);
-//		BaseEnderecos.adicionarEndereco(cliente2, endereco2);
-//		BaseEnderecos.removerEndereco(cliente2, endereco2);
-		BaseEnderecos.atualizarEndereco(cliente2, endereco1, endereco2);
-
-//		System.out.println(cliente2.getEnderecos());
-
-//		Cliente cliente3 = new Cliente("156.141.145-45", "(87) 9 9999-9999", "Roberto Duplicado", "roberto@email.com",
-//				"M");
-//		BaseEnderecos.adicionarEndereco(cliente3, endereco2);
-
-
-//		BaseDados.adicionarCliente(cliente3);
-
-//		System.out.println(BaseDados.isCliente(cliente1));
+//		BaseDados.atualizarCliente(cliente1, cliente2);
+//		BaseDados.buscarCliente(cliente1);
+//		System.out.println(BaseDados.buscarCliente("156.141.145-44"));
 //		System.out.println(BaseDados.isCliente(cliente2));
 
-//		System.out.println(BaseDados.getClientes());
-
-//		BaseDados.atualizarCliente(cliente1, cliente2);
-
-//		System.out.println(BaseDados.getClientes());
+		BaseEnderecos.adicionarEndereco(cliente1, endereco1);
+		BaseEnderecos.adicionarEndereco(cliente1, endereco2);
+		BaseEnderecos.adicionarEndereco(cliente2, endereco2);
+//		BaseEnderecos.removerEndereco(cliente2, endereco2);
+//		BaseEnderecos.atualizarEndereco(cliente1, endereco1, endereco2);
+//		System.out.println(cliente2.getEnderecos());
 
 		for (Cliente c : BaseDados.getClientes()) {
 			System.out.println(c);
 		}
+
 	}
 
 }

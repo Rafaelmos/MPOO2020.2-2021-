@@ -8,7 +8,14 @@ public class Endereco {
 	private String estado;
 	private String cep;
 
-	public Endereco(String longradouro, int numero, String bairro, String cidade, String estado, String cep) {
+	
+	public Endereco (String longradouro, int numero, String bairro, String cidade, String estado, String cep, Cliente cliente) {
+		cliente.getEnderecos().add(new Endereco(longradouro, numero, bairro, cidade, estado, cep));
+	}
+	
+	
+	
+	private Endereco(String longradouro, int numero, String bairro, String cidade, String estado, String cep) {
 		super();
 		this.longradouro = longradouro;
 		this.numero = numero;

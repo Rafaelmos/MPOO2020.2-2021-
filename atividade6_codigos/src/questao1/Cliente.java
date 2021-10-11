@@ -7,7 +7,7 @@ public class Cliente {
 	private String telefone;
 	private String nome;
 	private String email;
-	private ArrayList<Endereco> enderecos = new ArrayList<Endereco>();
+	private ArrayList<Endereco> enderecos;
 	private String sexo;
 
 	public Cliente(String cpf, String telefone, String nome, String email, String sexo) {
@@ -17,9 +17,12 @@ public class Cliente {
 		this.nome = nome;
 		this.email = email;
 		this.sexo = sexo;
+		this.enderecos = new ArrayList<Endereco>();
+		
 	}
 
-	public void addEd(Endereco endereco) {
+	public void addEd(String longradouro, int numero, String bairro, String cidade, String estado, String cep) {
+		Endereco endereco = new Endereco(longradouro, numero, bairro, cidade, estado, cep, this);
 		if (!enderecos.contains(endereco)) {
 			this.enderecos.add(endereco);
 		} else
@@ -40,4 +43,5 @@ public class Cliente {
 	public ArrayList<Endereco> getEnderecos() {
 		return enderecos;
 	}
+
 }

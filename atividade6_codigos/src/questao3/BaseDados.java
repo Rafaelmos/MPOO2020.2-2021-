@@ -1,4 +1,4 @@
-package questao1;
+package questao3;
 
 import java.util.ArrayList;
 
@@ -46,6 +46,9 @@ public class BaseDados {
 
 	public static boolean removerCliente(Cliente cliente) {
 		if (buscarCliente(cliente.getCpf()) != null) {
+			for (Conta c : cliente.getContas()) {
+				cliente.getContas().remove(c);
+			}
 			return clientes.remove(cliente);
 		}
 		return false;
@@ -66,6 +69,14 @@ public class BaseDados {
 
 	}
 
+	public static void todasAsContas() {
+		for (Cliente cli : BaseDados.getClientes()) {
+			for (Conta c : cli.getContas()) {
+				System.out.println(c);
+			}}
+		System.out.println("");
+	}
+	
 	public static ArrayList<Cliente> getClientes() {
 		return clientes;
 	}
