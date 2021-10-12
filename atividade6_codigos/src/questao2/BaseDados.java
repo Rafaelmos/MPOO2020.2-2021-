@@ -14,9 +14,7 @@ public class BaseDados {
 		} else {
 			System.out.println("CPF DUPLICADO");
 		}
-
 		return null;
-
 	}
 
 	public static Cliente buscarCliente(String cpf) {
@@ -64,9 +62,7 @@ public class BaseDados {
 				}
 			}
 		}
-
 		return false;
-
 	}
 
 	public static ArrayList<Cliente> getClientes() {

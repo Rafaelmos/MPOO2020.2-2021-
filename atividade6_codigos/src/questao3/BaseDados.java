@@ -13,9 +13,7 @@ public class BaseDados {
 		} else {
 			System.out.println("CPF DUPLICADO");
 		}
-
 		return null;
-
 	}
 
 	public static Cliente buscarCliente(String cpf) {
@@ -64,16 +62,15 @@ public class BaseDados {
 				}
 			}
 		}
-
 		return false;
-
 	}
 
 	public static void todasAsContas() {
 		for (Cliente cli : BaseDados.getClientes()) {
 			for (Conta c : cli.getContas()) {
 				System.out.println(c);
-			}}
+			}
+		}
 		System.out.println("");
 	}
 	

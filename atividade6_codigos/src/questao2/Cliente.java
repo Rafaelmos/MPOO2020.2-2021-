@@ -7,7 +7,7 @@ public class Cliente {
 	private String telefone;
 	private String nome;
 	private String email;
-	private ArrayList<Endereco> enderecos = new ArrayList<Endereco>();
+	private ArrayList<Endereco> enderecos;
 	private String sexo;
 
 	public Cliente(String cpf, String telefone, String nome, String email, String sexo) {
@@ -17,6 +17,7 @@ public class Cliente {
 		this.nome = nome;
 		this.email = email;
 		this.sexo = sexo;
+		this.enderecos = new ArrayList<Endereco>();
 	}
 
 	@Override

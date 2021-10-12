@@ -7,18 +7,14 @@ public class Conta {
 	private static int cont = 0;
 
 	public Conta(int agencia, double saldo, String senha, Cliente cliente) {
-
 		for (Conta c : cliente.getContas()) {
 			if (c.getAgencia() == agencia && c.getNumero() == numero || c.equals(cliente)) {
 				System.out.println("Conta existe nesse cliente ou numeros duplicados");
-
 				return;
 			}
 		}
 		cliente.getContas().add(new Conta(agencia, saldo, senha));
-
 		return;
-
 	}
 
 	private Conta(int agencia, double saldo, String senha) {

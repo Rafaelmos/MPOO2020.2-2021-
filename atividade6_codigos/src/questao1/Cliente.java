@@ -18,15 +18,6 @@ public class Cliente {
 		this.email = email;
 		this.sexo = sexo;
 		this.enderecos = new ArrayList<Endereco>();
-		
-	}
-
-	public void addEd(String longradouro, int numero, String bairro, String cidade, String estado, String cep) {
-		Endereco endereco = new Endereco(longradouro, numero, bairro, cidade, estado, cep, this);
-		if (!enderecos.contains(endereco)) {
-			this.enderecos.add(endereco);
-		} else
-			System.out.println("Endereço já existe nesse objeto");
 
 	}
 

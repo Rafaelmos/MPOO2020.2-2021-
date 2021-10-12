@@ -8,7 +8,14 @@ public class Endereco {
 	private String estado;
 	private String cep;
 
-	public Endereco(String longradouro, int numero, String bairro, String cidade, String estado, String cep) {
+	public Endereco(String longradouro, int numero, String bairro, String cidade, String estado, String cep,
+			Cliente cliente) {
+		if (!BaseEnderecos.isEndereco(longradouro, numero, bairro, cidade, estado, cep, cliente)) {
+			BaseEnderecos.adicionarEndereco(cliente, (new Endereco(longradouro, numero, bairro, cidade, estado, cep)));
+		}
+	}
+
+	private Endereco(String longradouro, int numero, String bairro, String cidade, String estado, String cep) {
 		super();
 		this.longradouro = longradouro;
 		this.numero = numero;
@@ -22,6 +29,30 @@ public class Endereco {
 	public String toString() {
 		return "Endereco [" + longradouro + ", n. " + numero + ", " + bairro + ", " + cidade + "-" + estado + ", CEP "
 				+ cep + "]";
+	}
+
+	public String getLongradouro() {
+		return longradouro;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public String getCep() {
+		return cep;
 	}
 
 }

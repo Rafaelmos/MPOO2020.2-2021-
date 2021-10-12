@@ -4,13 +4,16 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Cliente cliente1 = new Cliente("156.141.145-45", "(87) 9 99999-8888", "Roberto", "roberto@email.com", "M");
-		cliente1.addEd("Rua dos Cactos", 100, "Cactolândia", "Serra Talhada", "PE", "56970-00");
+		Cliente cliente1 = new Cliente("105.839.137-25", "(87) 9 915151-8168", "Roberto", "roberto@email.com", "M");
+		new Endereco("Rua dos Cactos", 100, "Cactolândia", "Serra Talhada", "PE", "56970-00", cliente1);
 
-		Cliente cliente2 = new Cliente("156.141.145-44", "(87) 9 98742-8598", "Ana", "ana@email.com", "F");
-		cliente2.addEd("Rua dos Cactos", 100, "Cactolândia", "Serra Talhada", "PE", "56970-00");
-		cliente2.addEd("Av. Gregório Ferraz Nogueira", 20, "José Tomé de Souza Ramos", "Serra Talhada", "PE",
-				"56909-535");
+		Cliente cliente2 = new Cliente("047.583.668-53", "(87) 9 98322-8789", "Patricia", "patricia@email.com", "F");
+		new Endereco("Rua dos Cactos", 100, "Cactolândia", "Serra Talhada", "PE", "56970-00", cliente2);
+		new Endereco("Av. Gregório Ferraz Nogueira", 20, "José Tomé de Souza Ramos", "Serra Talhada", "PE", "56909-535",
+				cliente2);
+
+//		new Endereco("Av. Gregório Ferraz Nogueira", 20, "José Tomé de Souza Ramos", "Serra Talhada", "PE", "56909-535",
+//				cliente2);
 
 		BaseDados.adicionarCliente(cliente1);
 		BaseDados.adicionarCliente(cliente2);

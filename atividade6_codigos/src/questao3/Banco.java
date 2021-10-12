@@ -9,7 +9,6 @@ public class Banco {
 					conta.setSaldo(conta.getSaldo() - valor);
 					return valor;
 				}
-
 			}
 		}
 		return 0;
