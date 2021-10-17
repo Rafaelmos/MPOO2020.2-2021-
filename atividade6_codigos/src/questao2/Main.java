@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Cliente cliente1 = new Cliente("105.839.137-25", "(87) 9 915151-8168", "Roberto", "roberto@email.com", "M");
+		Cliente cliente1 = new Cliente("105.839.137-25", "(87) 9 91151-8168", "Roberto", "roberto@email.com", "M");
 
 		Cliente cliente2 = new Cliente("047.583.668-53", "(87) 9 98322-8789", "Patricia", "patricia@email.com", "F");
 

@@ -1,0 +1,6 @@
+No Diagrama A, a Classe A é implementada pela Interface I, porém a Classe B só herdará os atributos
+da Classe A, pois os métodos que foram sobrescritos da interface não são abstratos na Classe A, 
+ou seja o B não será obrigado a implementar os métodos.
+No Diagrama B a diferença é que a Classe A é abstrata, por isso, os métodos que ela possui são 
+sobrescritos obrigatoriamente na Classe B.
+
