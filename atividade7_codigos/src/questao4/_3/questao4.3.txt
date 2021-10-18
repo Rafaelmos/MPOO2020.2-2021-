@@ -1,0 +1,5 @@
+O caixa terá apenas o comportamento vender(), que é implementado da Interface Venda, 
+onde tem um método vender() default, por isso não é preciso ser implementado por sobreposição 
+dentro da Interface Caixa.
+
+

@@ -1,0 +1,38 @@
+package questao4._1;
+
+public class Funcionario implements Caixa, Gerente {
+	private String nome;
+	private static int id;
+
+	public Funcionario(String nome, int id) {
+		super();
+		this.nome = nome;
+		Funcionario.id = id;
+	}
+
+	@Override
+	public void darDesconto() {
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	@Override
+	public String toString() {
+		return "Funcionario [nome=" + nome + ", id=" + id + "]";
+	}
+
+}

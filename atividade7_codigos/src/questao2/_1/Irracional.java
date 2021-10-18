@@ -1,4 +1,4 @@
-package questao2_2;
+package questao2._1;
 
 public interface Irracional {
 

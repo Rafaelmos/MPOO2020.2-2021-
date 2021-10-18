@@ -1,6 +1,6 @@
-package questao2_2;
+package questao2._2;
 
-public class Racional_ implements Racional {
+public class Racional extends Animal implements RacionalInterface {
 
 	public void andar() {
 		System.out.println("Andou");

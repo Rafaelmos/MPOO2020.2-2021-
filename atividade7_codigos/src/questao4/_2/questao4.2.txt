@@ -1,0 +1,2 @@
+Como od id é Estático qualquer novo objeto instanciado irá alterar o id de todo os objetos existentes, 
+pois o id será considerado uma constante geral para todos os objetos.

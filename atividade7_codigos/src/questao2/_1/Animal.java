@@ -1,4 +1,4 @@
-package questao2_1;
+package questao2._1;
 
 public class Animal implements Racional, Irracional {
 

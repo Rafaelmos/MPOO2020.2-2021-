@@ -16,13 +16,13 @@ public class Comissionado extends Empregado {
 		return this.getSalario();
 	}
 
+	public void somarVendas(double valor) {
+		this.setTotalVendas(this.getTotalVendas() + valor);
+	}
+
 	@Override
 	public String toString() {
 		return super.toString() + " Comissionado [totalVendas=" + totalVendas + ", taxaComissao=" + taxaComissao + "]";
-	}
-
-	public void somarVendas(double valor) {
-		this.setTotalVendas(this.getTotalVendas() + valor);
 	}
 
 	public double getTotalVendas() {
