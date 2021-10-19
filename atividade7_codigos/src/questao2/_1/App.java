@@ -1,6 +1,6 @@
 package questao2._1;
 
-public class Main {
+public class App {
 	public static void main(String[] args) {
 
 		Animal animal = new Animal();

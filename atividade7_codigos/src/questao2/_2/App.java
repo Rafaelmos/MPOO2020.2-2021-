@@ -1,6 +1,6 @@
 package questao2._2;
 
-public  class Main {
+public  class App {
 	public static void main(String[] args) {
 
 		Racional homem = new Racional();
@@ -10,10 +10,10 @@ public  class Main {
 		rato.emitirSom();
 
 		System.out.println(homem instanceof RacionalInterface);
-		System.out.println(rato instanceof Irracional);
+		System.out.println(rato instanceof IrracionalInterface);
 
-//		System.out.println(homem instanceof Irracional);
-//		System.out.println(rato instanceof Racional);
+		System.out.println(homem instanceof IrracionalInterface);
+		System.out.println(rato instanceof RacionalInterface);
 
 	}
 

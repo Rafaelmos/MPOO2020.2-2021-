@@ -10,7 +10,7 @@ public class App {
 
 		SuperFuncionario superFuncionario = new SuperFuncionario("Rafael", "JM", "047.583.668-58");
 
-		BaseDados.createFuncionario(superFuncionario);
+		//BaseDados.createFuncionario(superFuncionario);
 
 		superFuncionario.contratarFuncionarios(caixa);
 		superFuncionario.contratarFuncionarios(gerente);
@@ -18,6 +18,7 @@ public class App {
 
 //		superFuncionario.demitirFuncionario(gerente);
 
+		
 		for (Funcionario f : BaseDados.getFuncionarios()) {
 			System.out.println(f);
 		}

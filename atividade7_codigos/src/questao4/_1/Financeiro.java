@@ -5,7 +5,6 @@ public class Financeiro {
 
 	public static double verGrana(Funcionario funcionario) {
 		if (funcionario instanceof Gerente) {
-			System.out.println("entrou");
 			return FINANCEIRO;
 		}
 		return 0.0;

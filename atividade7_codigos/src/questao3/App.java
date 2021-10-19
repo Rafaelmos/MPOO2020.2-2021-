@@ -1,6 +1,6 @@
 package questao3;
 
-public class Main {
+public class App {
 
 	public static void main(String[] args) {
 		Horista horista = new Horista("Roberto", "105.839.137-25", 0, 100, 120);

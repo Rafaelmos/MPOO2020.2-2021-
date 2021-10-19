@@ -3,12 +3,12 @@ package questao5.situacao3;
 import java.util.ArrayList;
 
 public class BaseDados {
-	private static ArrayList<CaixaInterface> caixas = new ArrayList<CaixaInterface>();
-	private static ArrayList<GerenteInterface> gerentes = new ArrayList<GerenteInterface>();
-	private static ArrayList<SuperFuncionarioInterface> superFuncionarios = new ArrayList<SuperFuncionarioInterface>();
+	private static ArrayList<Caixa> caixas = new ArrayList<Caixa>();
+	private static ArrayList<Gerente> gerentes = new ArrayList<Gerente>();
+	private static ArrayList<SuperFuncionario> superFuncionarios = new ArrayList<SuperFuncionario>();
 	private static ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
-	public static Funcionario buscarFuncionario(Object funcionario) {
+	public static Funcionario buscarFuncionario(Funcionario funcionario) {
 		if (isDados(funcionario)) {
 			if (isFuncionario(funcionario)) {
 				return (Funcionario) funcionario;
@@ -18,19 +18,19 @@ public class BaseDados {
 		return null;
 	}
 
-	public static boolean isFuncionario(Object funcionario) {
+	public static boolean isFuncionario(Funcionario funcionario) {
 		if (funcionario instanceof Funcionario) {
 			return funcionarios.contains(funcionario);
 		}
 		return false;
 	}
 
-	public static boolean createFuncionario(Object funcionario) {
+	public static boolean createFuncionario(Funcionario funcionario) {
 		if (isFuncionario(funcionario)) {
 			return false;
 		} else {
 			for (Funcionario f : funcionarios) {
-				if (f.getCpf().equals(((Funcionario) funcionario).getCpf())) {
+				if (f.getCpf().equals((funcionario).getCpf())) {
 					return false;
 				}
 			}
@@ -38,42 +38,42 @@ public class BaseDados {
 		if (funcionario instanceof Funcionario) {
 			if (funcionario instanceof SuperFuncionario) {
 				superFuncionarios.add((SuperFuncionario) funcionario);
-				return funcionarios.add((Funcionario) funcionario);
+				return funcionarios.add(funcionario);
 			}
 			if (funcionario instanceof Caixa) {
 				caixas.add((Caixa) funcionario);
-				return funcionarios.add((Funcionario) funcionario);
+				return funcionarios.add(funcionario);
 			}
 			if (funcionario instanceof Gerente) {
 				gerentes.add((Gerente) funcionario);
-				return funcionarios.add((Funcionario) funcionario);
+				return funcionarios.add(funcionario);
 
 			}
 		}
 		return false;
 	}
 
-	public static boolean deleteFuncionario(Object funcionario) {
+	public static boolean deleteFuncionario(Funcionario funcionario) {
 		if (isFuncionario(funcionario)) {
 			if (funcionario instanceof Funcionario) {
 				if (funcionario instanceof SuperFuncionario) {
-					gerentes.remove((SuperFuncionario) funcionario);
-					return funcionarios.remove((Funcionario) funcionario);
+					gerentes.remove(funcionario);
+					return funcionarios.remove(funcionario);
 				}
 				if (funcionario instanceof Caixa) {
 					caixas.remove((Caixa) funcionario);
-					return funcionarios.remove((Funcionario) funcionario);
+					return funcionarios.remove(funcionario);
 				}
 				if (funcionario instanceof Gerente) {
 					gerentes.remove((Gerente) funcionario);
-					return funcionarios.remove((Funcionario) funcionario);
+					return funcionarios.remove(funcionario);
 				}
 			}
 		}
 		return false;
 	}
 
-	private static boolean isDados(Object funcionario) {
+	private static boolean isDados(Funcionario funcionario) {
 		if (funcionario instanceof Funcionario) {
 			return true;
 		}
@@ -84,15 +84,15 @@ public class BaseDados {
 		return funcionarios;
 	}
 
-	public static ArrayList<CaixaInterface> getCaixas() {
+	public static ArrayList<Caixa> getCaixas() {
 		return caixas;
 	}
 
-	public static ArrayList<GerenteInterface> getGerentes() {
+	public static ArrayList<Gerente> getGerentes() {
 		return gerentes;
 	}
 
-	public static ArrayList<SuperFuncionarioInterface> getSuperFuncionarios() {
+	public static ArrayList<SuperFuncionario> getSuperFuncionarios() {
 		return superFuncionarios;
 	}
 
