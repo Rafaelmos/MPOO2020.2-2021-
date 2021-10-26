@@ -1,0 +1,3 @@
+Basta colocar ele sem corpo e sendo abstrato e depois sobreescrever os métodos direto na BaseDados.
+
+Referência: Elaboração própria.

@@ -1,0 +1,13 @@
+Strategy é um padrão de projeto comportamental que é utilizado para otimização de códigos, 
+como métodos/comportamentos.
+Ele é utilizado quando há várias Classes distintas que possuem o comportamento diferentes mas 
+com mesmo nome.
+
+Umas das vantagens do Strategy é a reaproveitamento de código, assim reduzindo a quantidade de códigos
+repetitivos. Porém ele é muito complexo de se entender para manutenção, por exemplo, uma nova equipe 
+de programação provavelmente precisaria se um auxílio para conseguir entender e também é demorado 
+para desenvolver.
+
+
+Referência: https://medium.com/@lucasdeoliveiragonalves/design-patterns-strategy-1479a37f5cb
+			https://www.devmedia.com.br/estudo-e-aplicacao-do-padrao-de-projeto-strategy/25856

@@ -3,18 +3,16 @@ package questao6._1;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.chrono.IsoEra;
 import java.util.Date;
 
 public interface VerificadorInterface {
 	public static boolean verificarValidade(Produto produto) {
-		int dia = LocalDate.now().getDayOfMonth();
-		int mes = LocalDate.now().getMonthValue();
-		int ano = LocalDate.now().getYear();
-		String formatada = "" + dia + "/" + mes + "/" + ano + "";
+		String dataAtualString = "" + LocalDate.now().getDayOfMonth() + "/" + LocalDate.now().getMonthValue() + "/"
+				+ LocalDate.now().getYear() + "";
 		Date dataAtual = new Date();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		try {
-			dataAtual = dateFormat.parse(formatada);
+			dataAtual = new SimpleDateFormat("dd/MM/yyyy").parse(dataAtualString);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

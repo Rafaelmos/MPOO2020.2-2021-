@@ -3,3 +3,4 @@ onde tem um método vender() default, por isso não é preciso ser implementado por
 dentro da Interface Caixa.
 
 
+Referência: Elaboração própria.
