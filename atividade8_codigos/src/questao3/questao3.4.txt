@@ -1,0 +1,7 @@
+O método System.out.println é usado para quando queremos imprimir alguma saída no console.
+Já o System.err.println é usado para imprimir algum tipo de erro.
+As saídas dos dois são diferentes, o padrão de cores das duas são diferentes, ao err, é vermelho
+para chamar atenção para algum problema e a do out é preto, onde podem ajudar a separar as saídas
+do console para quando é um erro, ou para quando é um print normal.
+
+Referência: https://stackoverflow.com/questions/3163399/difference-between-system-out-println-and-system-err-println

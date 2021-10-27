@@ -8,6 +8,7 @@ public class App {
 
 		Produto produto = new Produto("Feijão de 1KG", 6.00, "31/12/2021", 50, "COD0001");
 		Produto produto1 = new Produto("Feijão de 1KG", 6.00, "31/12/2020", 50, "COD0001");
+
 		Produto produto2 = new Produto("Fubá de 500G", 1.5, "31/12/2021", 100, "COD0002");
 		Produto produto3 = new Produto("Fubá de 500G", 1.5, "31/12/2020", 100, "COD0002");
 		Produto produto4 = new Produto("Macarrão de 500G", 2.0, "31/12/2021", 80, "COD0003");
@@ -17,6 +18,7 @@ public class App {
 		BaseDados.adicionarProduto(produto);
 		BaseDados.adicionarProduto(produto1);
 		BaseDados.adicionarProduto(produto2);
+
 		BaseDados.adicionarProduto(produto3);
 		BaseDados.adicionarProduto(produto4);
 		BaseDados.adicionarProduto(produto5);

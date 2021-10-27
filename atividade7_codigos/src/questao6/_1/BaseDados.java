@@ -38,9 +38,8 @@ public class BaseDados implements VerificadorInterface, DemostrativoInterface {
 					return false;
 				}
 			}
-			return produtos.add(produto);
 		}
-		return false;
+		return produtos.add(produto);
 	}
 
 	public static boolean removerProduto(Produto produto) {

@@ -1,0 +1,2 @@
+O Relançamento ocorreu na linha 15, dentro do bloco do método levantarExceção, já que dentro do
+try{} há um throw new Exception().

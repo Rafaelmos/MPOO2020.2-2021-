@@ -1,0 +1,5 @@
+Há outro try catch dentro do método, ou sistema irá tratar outra exceção que sempre será tratada
+independetimente que a primeira ocorrá ou não.
+Então o print "Sempre executando" dentro do Finally ocorrerá novamente não importantando a situação
+, mas dentro dele existe outro  trycatch que também tentará capturar uma exceção caso ocorrá, diferente
+do da 3.2 que irá dar o  throw new Exception() sempre.

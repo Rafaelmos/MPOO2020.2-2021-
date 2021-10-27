@@ -11,9 +11,10 @@ public class App {
 
 		new Conta(1, 1000, "Maria222", cliente1);
 
+		//BaseDados.buscarUsuario(cliente);
 		BaseDados.addUsuario(cliente);
 		BaseDados.addUsuario(cliente1);
-
+		
 		Banco.transferir(100, cliente1.getContas().get(0), cliente.getContas().get(0));
 
 		System.out.println(BaseDados.getUsuarios());

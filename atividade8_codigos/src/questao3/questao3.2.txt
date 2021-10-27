@@ -1,0 +1,1 @@
+O Bloco Finally iria executar independentemente que a exceção ocorra ou não.

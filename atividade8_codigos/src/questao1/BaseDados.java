@@ -26,7 +26,6 @@ public class BaseDados {
 			}
 		}
 		return null;
-
 	}
 
 	public static boolean isCliente(Cliente cliente) {
