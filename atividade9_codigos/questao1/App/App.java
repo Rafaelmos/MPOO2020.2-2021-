@@ -1,6 +1,6 @@
-package App;
+package app;
 
-import View.CalculadoraTela;
+import view.CalculadoraTela;
 
 public class App {
 	public static void main(String[] args) {
