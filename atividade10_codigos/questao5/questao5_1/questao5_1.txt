@@ -1,0 +1,23 @@
+A classe TelaCadastro, que condensa todos os jFrames e todos os eventos ActionListener que
+utilizados na classe de forma anônima, poderíamos dividir os jFrames e os eventos, em classes 
+diferentes, onde os jFrames poderiam ficar em um pacote chamado view e os eventos ActionListener 
+pacote chamado controller, o motivo disso é porque os as telas(views) em MVC deve ter apenas a 
+parte visual do código(Quando executado), já o controller deve ter os comportamentos e as interações
+da view com o model, que é outro pacote onde podemos colocar, apenas a parte de acesso a manipulação
+de dados
+
+	Por isso a estrutura do código caso o furão fizesse ela em MVC ficaria parecida com isso.
+		package view;
+			class TelaCadastro;
+			class Mensagem;
+		package model;
+			class BaseDados;
+			class Produto;
+		package controller;
+			class controllerCadastro (onde ficaria todos os ActionListener);
+			
+Também temos que lembrar que no MVC, o model e o view não se comunicam entre si, por isso temos
+que chamar as usar o método da classe Mensagem, nos eventos do controllerCadastro.
+
+
+Referência: Elaboração própria.

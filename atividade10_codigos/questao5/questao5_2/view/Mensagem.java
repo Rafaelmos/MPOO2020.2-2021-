@@ -9,6 +9,8 @@ public class Mensagem {
 	private static final int REMOVER_ERRO = 1;
 	private static final int ADICIONAR_SUCESSO = 2;
 	private static final int REMOVER_SUCESSO = 3;
+	private static final int BUSCAR_SUCESSO = 6;
+	private static final int BUSCAR_FALHA = 7;
 
 	public static void exibirMensagem(int tipo){
 		switch (tipo) {
@@ -33,7 +35,14 @@ public class Mensagem {
 			break;
 		
 		case 5:
-			JOptionPane.showMessageDialog(null,"Não está estragado!");break;
+			JOptionPane.showMessageDialog(null,"Não está estragado!");
+			break;
+		case 6:
+			JOptionPane.showMessageDialog(null,"Produto encontrado com sucesso!");
+			break;
+		case 7:
+			JOptionPane.showMessageDialog(null,"Produto não encontrado!");
+
 
 		}}
 
@@ -52,4 +61,13 @@ public class Mensagem {
 	public static int getRemoverSucesso() {
 		return REMOVER_SUCESSO;
 	}
+
+	public static int getBuscarSucesso() {
+		return BUSCAR_SUCESSO;
+	}
+
+	public static int getBuscarFalha() {
+		return BUSCAR_FALHA;
+	}
+
 }

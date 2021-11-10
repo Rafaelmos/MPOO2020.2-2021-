@@ -1,8 +1,9 @@
-package questao4;
+package questao5_2.model;
 
 import java.util.ArrayList;
 import java.util.Date;
 
+import questao5_2.view.Mensagem;
 
 public class BaseDados {
 
@@ -10,23 +11,20 @@ public class BaseDados {
 
 	public static void inicializarBase() {
 		produtos = new ArrayList<Produto>();
+
 	}
 
 	public static boolean adicionarProduto(Produto produto) {
-		if (!isProduto(produto) && buscarProduto(produto.getId(), false) == null) {
-			Mensagem.exibirMensagem(2);
+		if (!isProduto(produto) && buscarProduto(produto.getId()) == null) {
 			return produtos.add(produto);
 		}
-		Mensagem.exibirMensagem(0);
 		return false;
 	}
 
 	public static boolean removerProduto(Produto produto) {
 		if (buscarProduto(produto) != null) {
-			Mensagem.exibirMensagem(3);
 			return produtos.remove(produto);
 		}
-		Mensagem.exibirMensagem(1);
 		return false;
 	}
 
@@ -37,18 +35,11 @@ public class BaseDados {
 		return null;
 	}
 
-	
-	public static Produto buscarProduto(int id, boolean b) {
+	public static Produto buscarProduto(int id) {
 		for (Produto produto : produtos) {
-			if (b && produto.getId() == id) {
-				return buscarProduto(produto);
-			}
 			if (produto.getId() == id) {
 				return produto;
 			}
-		}
-		if (b) {
-			return buscarProduto(null);
 		}
 		return null;
 	}
@@ -61,14 +52,9 @@ public class BaseDados {
 		Date dataAtual = new Date(System.currentTimeMillis());
 		if (buscarProduto(produto) != null) {
 			if (produto.getValidade().before(dataAtual)) {
-				Mensagem.exibirMensagem(4);
 				return false;
 			}
-
-			Mensagem.exibirMensagem(5);
-			return true;
 		}
 		return true;
-		
 	}
 }

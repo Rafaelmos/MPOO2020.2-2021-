@@ -4,15 +4,10 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
-import java.util.ArrayList;
-
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -27,8 +22,7 @@ public class TelaCadastro extends JFrame {
 			idLabelBuscar, idLabelVerificar;
 	private JTextField nomeFieldAdicionar, precoFieldAdicionar, idFieldAdicionar, idFieldRemover, idFieldBuscar,
 			idFieldVerificar;
-	private JFormattedTextField validadeField;
-	private VerificarEvento verificarEvento;
+	private JFormattedTextField validadeFieldAdicionar;
 
 	public TelaCadastro() {
 		super("Tela Cadastro");
@@ -45,7 +39,7 @@ public class TelaCadastro extends JFrame {
 			e.printStackTrace();
 		}
 
-		verificarEvento = new VerificarEvento();
+		//verificarEvento = new VerificarEvento();
 		adicionar = new JButton("Adicionar");
 		remover = new JButton("Remover");
 		buscar = new JButton("Buscar");
@@ -69,21 +63,47 @@ public class TelaCadastro extends JFrame {
 		precoLabelAdicionar = new JLabel("Preço: ");
 		precoFieldAdicionar = new JTextField(10);
 		validadeLabelAdicionar = new JLabel("Data: ");
-		validadeField = new JFormattedTextField();
+		validadeFieldAdicionar = new JFormattedTextField();
 		buttonAdd = new JButton("Adicionar");
 		buttonVoltarAdicionar = new JButton("Voltar");
 		buttonRemover = new JButton("Remover");
 		buttonVoltarRemover = new JButton("Voltar");
 		buttonBuscar = new JButton("Buscar");
 		buttonVoltarBuscar = new JButton("Voltar");
-		buttonBuscar = new JButton("Buscar");
 		buttonVoltarVerificar = new JButton("Voltar");
 		buttonVerificar = new JButton("Verificar");
 
-		adicionar.addActionListener(verificarEvento);
-		remover.addActionListener(verificarEvento);
-		buscar.addActionListener(verificarEvento);
-		verificar.addActionListener(verificarEvento);
+		adicionar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				telaAdd.setVisible(true);	
+			}
+		});
+		remover.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				telaRemover.setVisible(true);
+				
+			}
+		});
+		buscar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				telaBuscar.setVisible(true);
+				
+			}
+		});
+		verificar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				telaVerificar.setVisible(true);
+
+			}
+		});
 
 		add(adicionar);
 		add(remover);
@@ -102,16 +122,36 @@ public class TelaCadastro extends JFrame {
 		telaAdd.add(precoLabelAdicionar);
 		telaAdd.add(precoFieldAdicionar);
 		try {
-			maskData(validadeField);
+			maskData(validadeFieldAdicionar);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		telaAdd.add(validadeLabelAdicionar);
-		telaAdd.add(validadeField);
+		telaAdd.add(validadeFieldAdicionar);
 		telaAdd.add(buttonAdd);
-		buttonAdd.addActionListener(verificarEvento);
+		buttonAdd.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Produto produto = new Produto(Integer.parseInt(idFieldAdicionar.getText()),
+				nomeFieldAdicionar.getText(), Double.parseDouble(precoFieldAdicionar.getText()),
+				validadeFieldAdicionar.getText());
+		BaseDados.adicionarProduto(produto);	
+		idFieldAdicionar.setText("");
+		nomeFieldAdicionar.setText("");
+		precoFieldAdicionar.setText("");
+		validadeFieldAdicionar.setText("");
+			}
+		});
 		telaAdd.add(buttonVoltarAdicionar);
-		buttonVoltarAdicionar.addActionListener(verificarEvento);
+		buttonVoltarAdicionar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				telaAdd.setVisible(false);
+				
+			}
+		});
 
 		telaRemover.setLayout(new FlowLayout());
 		telaRemover.setSize(900, 90);
@@ -121,9 +161,22 @@ public class TelaCadastro extends JFrame {
 		telaRemover.add(idLabelRemover);
 		telaRemover.add(idFieldRemover);
 		telaRemover.add(buttonRemover);
-		buttonRemover.addActionListener(verificarEvento);
+		buttonRemover.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BaseDados.removerProduto(BaseDados.buscarProduto(Integer.parseInt(idFieldRemover.getText()), false));
+				idFieldRemover.setText("");
+			}
+		});
 		telaRemover.add(buttonVoltarRemover);
-		buttonVoltarRemover.addActionListener(verificarEvento);
+		buttonVoltarRemover.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				telaRemover.setVisible(false);	
+			}
+		});
 
 		telaBuscar.setLayout(new FlowLayout());
 		telaBuscar.setSize(900, 90);
@@ -133,9 +186,23 @@ public class TelaCadastro extends JFrame {
 		telaBuscar.add(idLabelBuscar);
 		telaBuscar.add(idFieldBuscar);
 		telaBuscar.add(buttonBuscar);
-		buttonBuscar.addActionListener(verificarEvento);
+		buttonBuscar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BaseDados.buscarProduto(Integer.parseInt(idFieldBuscar.getText()), true);
+				idFieldBuscar.setText("");
+
+			}
+		});
 		telaBuscar.add(buttonVoltarBuscar);
-		buttonVoltarBuscar.addActionListener(verificarEvento);
+		buttonVoltarBuscar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				telaBuscar.setVisible(false);	
+			}
+		});
 
 		telaVerificar.setLayout(new FlowLayout());
 		telaVerificar.setSize(900, 90);
@@ -145,9 +212,24 @@ public class TelaCadastro extends JFrame {
 		telaVerificar.add(idLabelVerificar);
 		telaVerificar.add(idFieldVerificar);
 		telaVerificar.add(buttonVerificar);
-		buttonVerificar.addActionListener(verificarEvento);
+		buttonVerificar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BaseDados.verificarPrazoValidade(
+				BaseDados.buscarProduto(Integer.parseInt(idFieldVerificar.getText()), false));	
+				idFieldVerificar.setText("");
+			}
+		});
 		telaVerificar.add(buttonVoltarVerificar);
-		buttonVoltarVerificar.addActionListener(verificarEvento);
+		buttonVoltarVerificar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				telaVerificar.setVisible(false);
+				
+			}
+		});
 
 		setVisible(true);
 	}
@@ -161,52 +243,5 @@ public class TelaCadastro extends JFrame {
 		return mask;
 	}
 
-	private class VerificarEvento implements ActionListener {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if (e.getSource() == adicionar) {
-				telaAdd.setVisible(true);
-			}
-			if (e.getSource() == remover) {
-				telaRemover.setVisible(true);
-			}
-			if (e.getSource() == buscar) {
-				telaBuscar.setVisible(true);
-			}
-			if (e.getSource() == verificar) {
-				telaVerificar.setVisible(true);
-			}
-			if (e.getSource() == buttonAdd) {
-				Produto produto = new Produto(Integer.parseInt(idFieldAdicionar.getText()),
-						nomeFieldAdicionar.getText(), Double.parseDouble(precoFieldAdicionar.getText()),
-						validadeField.getText());
-				
-				BaseDados.adicionarProduto(produto);
-			}
-			if (e.getSource() == buttonVoltarAdicionar) {
-				telaAdd.setVisible(false);
-			}
-			if (e.getSource() == buttonRemover) {
-				BaseDados.removerProduto(BaseDados.buscarProduto(Integer.parseInt(idFieldRemover.getText()), false));
-			}
-			if (e.getSource() == buttonVoltarRemover) {
-				telaRemover.setVisible(false);
-			}
-			if (e.getSource() == buttonBuscar) {
-				BaseDados.buscarProduto(Integer.parseInt(idFieldBuscar.getText()), true);
-			}
-			if (e.getSource() == buttonVoltarBuscar) {
-				telaBuscar.setVisible(false);
-			}
-			if (e.getSource() == buttonVerificar) {
-				BaseDados.verificarPrazoValidade(
-						BaseDados.buscarProduto(Integer.parseInt(idFieldVerificar.getText()), false));
-			}
-			if (e.getSource() == buttonVoltarVerificar) {
-				telaVerificar.setVisible(false);
-			}
 
-		}
-
-	}
 }
