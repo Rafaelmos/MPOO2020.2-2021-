@@ -11,6 +11,6 @@ public class AppQ3 {
 		//new TelaAdicionarCliente();
 		//new TelaInicial();
 		//new TelaCampanha();
-		
+		new OferecerProduto();
 	}
 }
