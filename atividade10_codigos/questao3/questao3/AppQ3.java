@@ -9,8 +9,8 @@ public class AppQ3 {
 		//new TelaBuscarCliente();
 		//new TelaBuscarProduto();
 		//new TelaAdicionarCliente();
-		//new TelaInicial();
+		new TelaInicial();
 		//new TelaCampanha();
-		new OferecerProduto();
+		//new OferecerProduto();
 	}
 }
