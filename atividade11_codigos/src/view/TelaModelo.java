@@ -11,7 +11,6 @@ public abstract class TelaModelo extends JFrame {
 		setSize(new Dimension(350, 300));
 		setResizable(false);
 		setLocationRelativeTo(null);
-		//setLayout(new FlowLayout());
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 }

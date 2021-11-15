@@ -20,7 +20,7 @@ public class BaseDados implements VerificadorInterface, DemostrativoInterface {
 
 	public static Produto buscarProduto(String codBarras) {
 		for (Produto prod : produtos) {
-			if (prod.getCodBarras().equals(codBarras)) {
+			if (prod.getCodBarras() == codBarras) {
 				return prod;
 			}
 		}
@@ -38,8 +38,10 @@ public class BaseDados implements VerificadorInterface, DemostrativoInterface {
 					return false;
 				}
 			}
+			return produtos.add(produto);
 		}
-		return produtos.add(produto);
+		return false;		
+
 	}
 
 	public static boolean removerProduto(Produto produto) {
@@ -50,9 +52,15 @@ public class BaseDados implements VerificadorInterface, DemostrativoInterface {
 	}
 
 	public static boolean atualizarProduto(Produto produtoOld, Produto produtoNew) {
-		if (buscarProduto(produtoNew) == null) {
-			produtos.remove(buscarProduto(produtoOld));
-			return produtos.add(produtoNew);
+		int index = 0;
+		if (buscarProduto(produtoOld) != null) {
+			for (Produto produto : produtos) {
+				if (produto == produtoOld) {
+					produtos.set(index, produtoNew);
+					return true;
+				}
+				index++;
+			}
 		}
 		return false;
 	}
