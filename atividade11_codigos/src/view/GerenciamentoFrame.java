@@ -11,7 +11,7 @@ public class GerenciamentoFrame extends TelaModelo {
 	private JMenuItem cadastrarProdutoItem, buscarProdutoItem, atualizarProdutoItem, removerProdutoItem,
 			demostrativoControleItem, verificadorControleItem, sairItem;
 
-	public GerenciamentoFrame(Controller controller) {
+	public GerenciamentoFrame() {
 		setTitle("MPOO Market");
 		menuBar = new JMenuBar();
 		menuTitle = new JMenu("Gerenciar");

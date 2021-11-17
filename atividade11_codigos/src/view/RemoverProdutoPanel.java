@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.util.Date;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -18,7 +19,8 @@ public class RemoverProdutoPanel extends JPanel {
 	private JButton removerButton, removerButton2;
 	private JPanel buttons;
 	private JRadioButton jRadioButton;
-	private ButtonGroup buttonGroup;
+	private ButtonGroup buttonGroup, buttonGroup2;
+	private JFrame opcoesFrame;
 
 	public RemoverProdutoPanel() {
 		panelTitulo = new JPanel();
@@ -42,6 +44,10 @@ public class RemoverProdutoPanel extends JPanel {
 		panelButtonRem.add(removerButton);
 		add(panelButtonRem);
 
+		
+		opcoesFrame = new JFrame("Escolha qual objeto você quer remover");
+		buttonGroup2 = new ButtonGroup();
+		
 		panelSelecionarRemocao = new BuscarProdutoPanel();
 		buttons = new JPanel();
 

@@ -76,6 +76,10 @@ public class Produto {
 	public void setValidade(Date validade) {
 		this.validade = validade;
 	}
+	
+	public void setValidade(String validade) {
+		this.validade = formatarData(validade);
+	}
 
 	public String getCodBarras() {
 		return codBarras;
@@ -90,7 +94,8 @@ public class Produto {
 	}
 
 	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
+		verificarEstoque(quantidade);
+		this.estoque.setQuantidade(quantidade);
 	}
 
 	public Estoque getEstoque() {
