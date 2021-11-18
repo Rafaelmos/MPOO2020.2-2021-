@@ -1,7 +1,5 @@
 package view;
 
-import java.awt.Container;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JLabel;

@@ -1,8 +1,11 @@
 package view;
 
+import java.io.IOException;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import controller.Controller;
+import model.Icone;
 
 public class AberturaFrame extends TelaModelo {
 	public AberturaFrame() {
@@ -10,6 +13,12 @@ public class AberturaFrame extends TelaModelo {
 		add(new JLabel(new ImageIcon(getClass().getResource("/img/logo.png"))));
 		setVisible(true);
 
+		try {
+			Icone icone = new Icone(Icone.URL_ICONE);
+			setIconImage(icone.getIcone().getImage());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

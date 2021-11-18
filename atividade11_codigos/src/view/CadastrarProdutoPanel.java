@@ -61,15 +61,7 @@ public class CadastrarProdutoPanel extends JPanel {
 		pesoProdutoField.setForeground(Color.GRAY);
 		quantidadeProdutoJLabel = new JLabel("Quantidade: ");
 		quantidadeProdutoField = new JTextField(8);
-
-//		try {
-//			maskData(validadeProdutoField);
-//			maskPreco(precoProdutoField);
-//			maskPeso(pesoProdutoField, unidadeM);
-//		} catch (ParseException e) {
-//			e.printStackTrace();
-//		}
-
+		//quantidadeProdutoField.set
 		buttons = new JPanel();
 		buttonGroup = new ButtonGroup();
 		kgButton = new JRadioButton("Kg");
@@ -84,6 +76,7 @@ public class CadastrarProdutoPanel extends JPanel {
 		buttons.add(lButton);
 		buttons.add(mButton);
 		buttons.add(unidButton);
+
 		panelLabelsAndsFields.setLayout(new SpringLayout());
 		panelLabelsAndsFields.add(nomeProdutoJLabel);
 		panelLabelsAndsFields.add(nomeProdutoField);
@@ -103,6 +96,7 @@ public class CadastrarProdutoPanel extends JPanel {
 		panelSalvar = new JPanel();
 		salvarButton = new JButton("Salvar");
 		panelSalvar.add(salvarButton);
+		salvarButton.setEnabled(false);
 
 		panelScroll = new JPanel();
 		panelScroll.setLayout(new SpringLayout());
@@ -110,11 +104,12 @@ public class CadastrarProdutoPanel extends JPanel {
 		panelScroll.add(panelLabelsAndsFields);
 		panelScroll.add(panelSalvar);
 		add(panelScroll);
-		
+
 		jScroll = new JScrollPane();
 		jScroll.setPreferredSize(new Dimension(330, 240));
 		add(jScroll);
 		jScroll.setViewportView(panelScroll);
+
 		SpringUtilities.makeCompactGrid(panelLabelsAndsFields, 7, 2, 1, 1, 1, 1);
 		SpringUtilities.makeCompactGrid(panelScroll, 3, 1, 1, 1, 1, 1);
 
@@ -180,116 +175,5 @@ public class CadastrarProdutoPanel extends JPanel {
 		return pesoProdutoJLabel;
 	}
 
-//	private MaskFormatter maskData(JFormattedTextField textfield) throws ParseException {
-//		MaskFormatter maskData = new MaskFormatter("##/##/####");
-//		maskData.setOverwriteMode(true);
-//		maskData.setValidCharacters("0123456789");
-//		maskData.install(textfield);
-//		return maskData;
-//	}
-//	
-//	private MaskFormatter maskPreco(JFormattedTextField textfield) throws ParseException {
-//		MaskFormatter maskData = new MaskFormatter("R$ ####.##");
-//		maskData.setOverwriteMode(true);
-//		maskData.setValidCharacters("0123456789");
-//		maskData.setPlaceholderCharacter('0');
-//		maskData.install(textfield);
-//		return maskData;
-//	}
-	
-//	private MaskFormatter maskPeso(JFormattedTextField textfield, String unidadeM) throws ParseException {
-//		MaskFormatter maskData = new MaskFormatter(unidadeM+ " ####.##");
-//		maskData.setOverwriteMode(true);
-//		maskData.setValidCharacters("0123456789");
-//		maskData.setPlaceholderCharacter('0');
-//		maskData.install(textfield);
-//		return maskData;
-//	}
 
-//	public JLabel getPrecoProdutoJLabel() {
-//		return precoProdutoJLabel;
-//	}
-//
-//	public void setPrecoProdutoJLabel(JLabel precoProdutoJLabel) {
-//		this.precoProdutoJLabel = precoProdutoJLabel;
-//	}
-//
-//	public JTextField getNomeProdutoField() {
-//		return nomeProdutoField;
-//	}
-//
-//	public void setNomeProdutoField(JTextField nomeProdutoField) {
-//		this.nomeProdutoField = nomeProdutoField;
-//	}
-//
-//	public JTextField getCodBarrasProdutoField() {
-//		return codBarrasProdutoField;
-//	}
-//
-//	public void setCodBarrasProdutoField(JTextField codBarrasProdutoField) {
-//		this.codBarrasProdutoField = codBarrasProdutoField;
-//	}
-//
-//	public JTextField getPrecoProdutoField() {
-//		return precoProdutoField;
-//	}
-//
-//	public void setPrecoProdutoField(JFormattedTextField precoProdutoField) {
-//		this.precoProdutoField = precoProdutoField;
-//	}
-//
-//	public JTextField getQuantidadeProdutoField() {
-//		return quantidadeProdutoField;
-//	}
-//
-//	public void setQuantidadeProdutoField(JTextField quantidadeProdutoField) {
-//		this.quantidadeProdutoField = quantidadeProdutoField;
-//	}
-//
-//	public JFormattedTextField getValidadeProdutoField() {
-//		return validadeProdutoField;
-//	}
-//
-//	public void setValidadeProdutoField(JFormattedTextField validadeProdutoField) {
-//		this.validadeProdutoField = validadeProdutoField;
-//	}
-//
-//	public JFormattedTextField getPesoProdutoField() {
-//		return pesoProdutoField;
-//	}
-//
-//	public void setPesoProdutoField(JFormattedTextField pesoProdutoField) {
-//		this.pesoProdutoField = pesoProdutoField;
-//	}
-//
-//	public JScrollPane getjScroll() {
-//		return jScroll;
-//	}
-//
-//	public JRadioButton getKgButton() {
-//		return kgButton;
-//	}
-//
-//	public JRadioButton getlButton() {
-//		return lButton;
-//	}
-//
-//	public JRadioButton getmButton() {
-//		return mButton;
-//	}
-//
-//	public JButton getSalvarButton() {
-//		return salvarButton;
-//	}
-//
-//	public void setUnidadeM(String unidadeM) {
-//		this.unidadeM = unidadeM;
-//	}
-//	
-//	public String getUnidadeM() {
-//		return unidadeM;
-//	}
-
-	
-	
 }

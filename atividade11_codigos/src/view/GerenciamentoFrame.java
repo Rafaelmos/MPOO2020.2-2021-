@@ -1,9 +1,12 @@
 package view;
 
+import java.io.IOException;
+
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import controller.Controller;
+import model.Icone;
 
 public class GerenciamentoFrame extends TelaModelo {
 	private JMenuBar menuBar;
@@ -38,6 +41,13 @@ public class GerenciamentoFrame extends TelaModelo {
 		menuBar.add(sairItem);
 
 		setJMenuBar(menuBar);
+		
+		try {
+			Icone icone = new Icone(Icone.URL_ICONE);
+			setIconImage(icone.getIcone().getImage());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public JMenuItem getCadastrarProdutoItem() {
