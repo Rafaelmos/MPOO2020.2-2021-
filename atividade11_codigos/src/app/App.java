@@ -8,7 +8,7 @@ public class App {
 	public static void main(String[] args) throws ProdutoNullException {
 
 		new Controller();
-		BaseDados.listarProdutos();
+		//BaseDados.listarProdutos();
 
 	}
 }

@@ -21,6 +21,7 @@ import model.BaseDados;
 import model.Produto;
 import model.ProdutoExistenteException;
 import view.AberturaFrame;
+import view.AtualizarProdutoPanel;
 import view.BuscarProdutoPanel;
 import view.CadastrarProdutoPanel;
 import view.GerenciamentoFrame;
@@ -37,6 +38,7 @@ public class Controller {
 	private CadastrarProdutoPanel cadastrarProdutoPanel;
 	private BuscarProdutoPanel buscarProdutoPanel;
 	private RemoverProdutoPanel removerProdutoPanel;
+	private AtualizarProdutoPanel atualizarProdutoPanel;
 	private CadastrarProdutoController cadastrarProdutoController;
 	private String unidadeM;
 
@@ -49,6 +51,8 @@ public class Controller {
 		this.cadastrarProdutoPanel = new CadastrarProdutoPanel();
 		this.buscarProdutoPanel = new BuscarProdutoPanel();
 		this.removerProdutoPanel = new RemoverProdutoPanel();
+		this.atualizarProdutoPanel = new AtualizarProdutoPanel();
+
 		this.aberturaController = new AberturaController();
 		this.gerenciamentoController = new GerenciamentoController();
 		this.cadastrarProdutoController = new CadastrarProdutoController();
@@ -103,10 +107,9 @@ public class Controller {
 			}
 
 			if (e.getSource() == gerenciamentoFrame.getAtualizarProdutoItem()) {
-				//
-				//
-				//
-
+				ocultarOuPanes();
+				gerenciamentoFrame.setContentPane(atualizarProdutoPanel);
+				atualizarProdutoPanel.setVisible(true);
 			}
 
 			if (e.getSource() == gerenciamentoFrame.getRemoverProdutoItem()) {
@@ -134,6 +137,7 @@ public class Controller {
 			cadastrarProdutoPanel.setVisible(false);
 			buscarProdutoPanel.setVisible(false);
 			removerProdutoPanel.setVisible(false);
+			atualizarProdutoPanel.setVisible(false);
 			;
 		}
 
@@ -174,7 +178,7 @@ public class Controller {
 			cadastrarProdutoPanel.getSalvarButton().addKeyListener(keyHandler);
 			cadastrarProdutoPanel.getQuantidadeProdutoField().addKeyListener(keyHandler);
 
-			// removerProdutoPanel.getRemoverButton().addActionListener(buttonHandler);
+			removerProdutoPanel.getRemoverButton().addActionListener(buttonHandler);
 
 		}
 
