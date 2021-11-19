@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import controller.Controller;
 import model.Icone;
 
 public class AberturaFrame extends TelaModelo {

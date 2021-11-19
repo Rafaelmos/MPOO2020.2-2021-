@@ -187,15 +187,17 @@ public class Controller {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == cadastrarProdutoPanel.getSalvarButton()) {
-
+					
 					String stringTemp = cadastrarProdutoPanel.getPrecoProdutoField().getText();
 					String[] resu1 = stringTemp.split(" ");
 
 					produto = new Produto(cadastrarProdutoPanel.getNomeProdutoField().getText(),
-							Double.parseDouble(resu1[1]), cadastrarProdutoPanel.getValidadeProdutoField().getText(),
+							Double.parseDouble(resu1[1]), 
+							cadastrarProdutoPanel.getValidadeProdutoField().getText(),
 							Integer.parseInt(cadastrarProdutoPanel.getQuantidadeProdutoField().getText()),
 							cadastrarProdutoPanel.getCodBarrasProdutoField().getText(),
-							Double.parseDouble(cadastrarProdutoPanel.getPesoProdutoField().getText()), unidadeM);
+							Double.parseDouble(cadastrarProdutoPanel.getPesoProdutoField().getText()),
+							unidadeM);
 					try {
 						BaseDados.adicionarProduto(produto);
 						BaseDados.listarProdutos();
@@ -269,9 +271,8 @@ public class Controller {
 					if (!(e.getKeyChar() == KeyEvent.VK_0 || e.getKeyChar() == KeyEvent.VK_1
 							|| e.getKeyChar() == KeyEvent.VK_2 || e.getKeyChar() == KeyEvent.VK_3
 							|| e.getKeyChar() == KeyEvent.VK_4 || e.getKeyChar() == KeyEvent.VK_5
-							|| e.getKeyChar() == KeyEvent.VK_6 || e.getKeyChar() == KeyEvent.VK_7
-							|| e.getKeyChar() == KeyEvent.VK_8 || e.getKeyChar() == KeyEvent.VK_9
-							|| e.getKeyChar() == KeyEvent.VK_BACK_SPACE)) {
+							|| e.getKeyChar() == e.VK_6 || e.getKeyChar() == e.VK_7 || e.getKeyChar() == e.VK_8
+							|| e.getKeyChar() == e.VK_9 || e.getKeyChar() == e.VK_BACK_SPACE)) {
 						e.consume();
 					}
 
@@ -320,6 +321,7 @@ public class Controller {
 
 			@Override
 			public void focusLost(FocusEvent e) {
+				// TODO Auto-generated method stub
 
 			}
 
