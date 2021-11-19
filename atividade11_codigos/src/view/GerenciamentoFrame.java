@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import controller.Controller;
 import model.Icone;
 
 public class GerenciamentoFrame extends TelaModelo {
