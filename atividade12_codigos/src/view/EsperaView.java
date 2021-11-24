@@ -1,39 +1,33 @@
 package view;
 
+import java.awt.Dimension;
 import java.awt.Font;
 import java.util.Observable;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class EsperaView extends View {
-	private JLabel numeroEsperaLabel, nomeLabel;
+	//private JLabel numeroEsperaLabel, nomeLabel;
 	private JPanel jPanel;
-	private String nomePaciente;
+	private FilaPanel filaPanel;
+	private String nome, numero;
+	
 
-	public EsperaView(String nome, String numero) {
-		super(nome);
+	public EsperaView(String titulo) {
+		super(titulo);
 
-		jPanel = new JPanel();
-		nomeLabel = new JLabel(nomePaciente);
-		numeroEsperaLabel = new JLabel(numero);
+		this.getJMenuBar().setVisible(false);
+		setSize(new Dimension(300,100));
+		filaPanel = new FilaPanel(nome, FilaPanel.getNumeroEsperaLabel().getText());
 
-		nomeLabel.setFont(new Font("Arial", Font.BOLD + Font.ITALIC, 20));
-		numeroEsperaLabel.setFont(new Font("Arial", Font.BOLD + Font.ITALIC, 25));
-
-		jPanel.add(nomeLabel);
-		jPanel.add(numeroEsperaLabel);
-		setContentPane(jPanel);
+		filaPanel.getProxButton().setVisible(false);
+		setContentPane(filaPanel);
 		setVisible(true);
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
-		nomeLabel.setText("" + arg);
-		numeroEsperaLabel.setText("" + arg);
+		FilaPanel.getNomeLabel().setText("" + arg);
+		FilaPanel.getNumeroEsperaLabel().setText("" + arg);
 	}
-
-	public JLabel getNumeroEsperaLabel() {
-		return numeroEsperaLabel;
-	}
-
 }

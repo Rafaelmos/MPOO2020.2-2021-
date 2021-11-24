@@ -1,22 +1,25 @@
 package view;
 
-import java.awt.Dimension;
 import java.util.Observable;
 
-public class MedicoView extends View {
-	CadastrarPanel  cadastrarPanel;
-	FilaPanel filaPanel;
-	
-	public MedicoView(String titulo) {
+public class RecepcionistView extends View {
+
+	private CadastrarPanel cadastrarPanel;
+	private FilaPanel filaPanel;
+	private String numero;
+
+	public RecepcionistView(String titulo, String numero) {
 		super(titulo);
+		this.getPacienteConsultaItem().setEnabled(false);
 
 		cadastrarPanel = new CadastrarPanel();
 		setContentPane(cadastrarPanel);
 		cadastrarPanel.setVisible(false);
-		filaPanel = new FilaPanel(null, FilaPanel.getNumeroEsperaLabel().getText());
+		this.numero = numero;
+		filaPanel = new FilaPanel("", FilaPanel.getNumeroEsperaLabel().getText());
 		setContentPane(filaPanel);
 		filaPanel.setVisible(false);
-		
+
 	}
 
 	@Override
@@ -33,7 +36,8 @@ public class MedicoView extends View {
 		return filaPanel;
 	}
 
-	
-	
-	
+	public String getNumero() {
+		return numero;
+	}
+
 }
