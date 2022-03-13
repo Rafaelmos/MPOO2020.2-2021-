@@ -7,9 +7,6 @@ public class AppQ1 {
 
 	}
 
-	public static void main(String[] args) {
-		Sedanapo 
-	}
 	
 
 }
