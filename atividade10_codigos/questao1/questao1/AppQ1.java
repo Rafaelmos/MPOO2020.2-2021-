@@ -6,6 +6,10 @@ public class AppQ1 {
 		new CalculadoraController(new CalculadoraTela());
 
 	}
+
+	public static void main(String[] args) {
+		Sedanapo 
+	}
 	
 
 }

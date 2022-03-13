@@ -73,6 +73,11 @@ public class CadastrarPanel extends JPanel {
 		cadastrarDVDPanel.setVisible(false);
 		scrollJPanel.add(cadastrarMoedaPanel);
 		cadastrarMoedaPanel.setVisible(false);
+		
+		cadastrarDVDPanel.disable();
+		cadastrarMoedaPanel.disable();
+		cadastrarLivroPanel.disable();
+
 
 		buttonPanel.add(cadastrarButton);
 

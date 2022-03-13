@@ -50,7 +50,7 @@ public class BaseDados {
 
 	public static boolean atualizarEstoque(Produto produto, Estoque Novoestoque) throws ProdutoNullException {
 		if (buscarProduto(produto) != null) {
-			buscarProduto(produto).setEstoque(Novoestoque);
+			buscarProduto(produto).setEstoque(Novoestoque);			
 			return true;
 		}
 		throw new ProdutoNullException(TipoErro.NAO_EXISTE_PRODUTO);

@@ -13,6 +13,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.ParseException;
 import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
@@ -273,6 +274,7 @@ public class Controller {
 							|| e.getKeyChar() == KeyEvent.VK_4 || e.getKeyChar() == KeyEvent.VK_5
 							|| e.getKeyChar() == e.VK_6 || e.getKeyChar() == e.VK_7 || e.getKeyChar() == e.VK_8
 							|| e.getKeyChar() == e.VK_9 || e.getKeyChar() == e.VK_BACK_SPACE)) {
+						JOptionPane.showMessageDialog(null, "Digite apenas números", "Erro", JOptionPane.ERROR_MESSAGE);
 						e.consume();
 					}
 
@@ -333,6 +335,9 @@ public class Controller {
 						&& !cadastrarProdutoPanel.getPesoProdutoField().getText().isBlank()
 						&& !cadastrarProdutoPanel.getQuantidadeProdutoField().getText().isBlank()) {
 					cadastrarProdutoPanel.getSalvarButton().setEnabled(true);
+				} else {
+					cadastrarProdutoPanel.getSalvarButton().setEnabled(false);
+
 				}
 
 			}
@@ -389,6 +394,9 @@ public class Controller {
 			}
 		}
 
+		
+		
+		
 		private class KeyHandler extends KeyAdapter {
 
 			public void keyPressed(KeyEvent e) {
